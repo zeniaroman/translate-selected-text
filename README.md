@@ -8,6 +8,8 @@
 2. Нажмите `⌘ Command+Z`
 3. Перевод появится во всплывающем окне
 
+![Screenshot](https://raw.githubusercontent.com/zeniaroman/translate-selected-text/refs/heads/main/screenshot.png)
+
 ---
 
 ## 📋 Обзор функционала

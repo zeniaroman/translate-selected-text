@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary - Translate Selected Text</title>
+  <link rel="stylesheet" href="styles/history.css">
+  <link rel="stylesheet" href="styles/history-categories.css">
+  <link rel="stylesheet" href="styles/history-edit.css">
+  <link rel="stylesheet" href="styles/history-buttons.css">
+  <link rel="stylesheet" href="styles/history-tags.css">
+</head>
+<body>
+  <div class="history">
+    <div class="history__header">
+      <h1 class="history__title">Dictionary</h1>
+      
+      <div class="history__controls">
+        <div class="history__toggles">
+          <label class="history__toggle">
+            <input type="checkbox" id="showOriginal" checked>
+            <span class="history__toggle-label">Show Original</span>
+          </label>
+          <label class="history__toggle">
+            <input type="checkbox" id="showTranslation" checked>
+            <span class="history__toggle-label">Show Translation</span>
+          </label>
+          <label class="history__toggle">
+            <input type="checkbox" id="showImage" checked>
+            <span class="history__toggle-label">Show Image</span>
+          </label>
+        </div>
+        
+        <div class="history__actions">
+          <button id="addNewBtn" class="history__btn history__btn--primary">Add New</button>
+          <button id="learnBtn" class="history__btn history__btn--primary">Learn</button>
+          <button id="manageCategoriesBtn" class="history__btn history__btn--secondary">Categories</button>
+          <button id="manageTagsBtn" class="history__btn history__btn--secondary">Tags</button>
+          <button id="clearAllBtn" class="history__btn history__btn--secondary">Clear All</button>
+          <button id="trashBtn" class="history__btn history__btn--secondary">Trash</button>
+        </div>
+      </div>
+      
+      <div id="categoryModal" class="history__modal" style="display: none;">
+        <div class="history__modal-content">
+          <div class="history__modal-header">
+            <h3>Manage Categories</h3>
+            <button id="closeModalBtn" class="history__modal-close">×</button>
+          </div>
+          <div class="history__modal-body">
+            <div class="history__category-input">
+              <input type="text" id="newCategoryInput" placeholder="Enter category name..." />
+              <button id="addCategoryBtn">Add</button>
+            </div>
+            <div id="categoriesList" class="history__categories-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tagsModal" class="history__modal" style="display: none;">
+        <div class="history__modal-content">
+          <div class="history__modal-header">
+            <h3>Manage Tags</h3>
+            <button id="closeTagsModalBtn" class="history__modal-close">×</button>
+          </div>
+          <div class="history__modal-body">
+            <div class="history__category-input">
+              <input type="text" id="newTagInput" placeholder="Enter tag name..." />
+              <button id="addTagBtn">Add</button>
+            </div>
+            <div id="tagsList" class="history__categories-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="history__filters">
+      <div class="history__filter-group">
+        <label class="history__filter-label">Filter by category:</label>
+        <select id="categoryFilter" class="history__category-filter">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="history__filter-group">
+        <label class="history__filter-label">Filter by status:</label>
+        <select id="statusFilter" class="history__status-filter">
+          <option value="">All</option>
+          <option value="new">To Learn</option>
+          <option value="learning">Learning</option>
+          <option value="learned">Learned</option>
+        </select>
+      </div>
+      <div class="history__filter-group">
+        <label class="history__filter-label">Filter by tag:</label>
+        <select id="tagFilter" class="history__tag-filter">
+          <option value="">All</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="historyTabs" class="history__tabs"></div>
+    
+    <div id="historyList" class="history__list">
+      <div class="history__empty">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <p>No translation history yet</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="editCardModal" class="history__modal" style="display: none;">
+    <div class="history__modal-content history__modal-content--large">
+      <div class="history__modal-header">
+        <h3>Edit Card</h3>
+        <button id="closeEditModalBtn" class="history__modal-close">&times;</button>
+      </div>
+      <div class="history__modal-body">
+        <div class="history__edit-form">
+          <div class="history__form-group">
+            <label class="history__form-label">Original</label>
+            <textarea id="editOriginal" class="history__form-textarea" rows="3" placeholder="Enter original text"></textarea>
+          </div>
+          
+          <div class="history__form-group">
+            <label class="history__form-label">Translation</label>
+            <textarea id="editTranslation" class="history__form-textarea" rows="3" placeholder="Enter translation"></textarea>
+          </div>
+          
+          <div class="history__form-group">
+            <label class="history__form-label">Image URL</label>
+            <input type="text" id="editImageUrl" class="history__form-input" placeholder="Enter image URL">
+            <div id="imagePreview" class="history__image-preview" style="display: none;">
+              <img id="previewImg" src="" alt="Preview">
+            </div>
+          </div>
+          
+          <div class="history__form-group">
+            <label class="history__form-label">Custom Title</label>
+            <input type="text" id="editCustomTitle" class="history__form-input" placeholder="Enter custom title">
+          </div>
+          
+          <div class="history__form-group">
+            <label class="history__form-label">Context</label>
+            <textarea id="editContext" class="history__form-textarea" rows="3" placeholder="Enter context"></textarea>
+          </div>
+          
+          <div class="history__form-group">
+            <label class="history__form-label">Description</label>
+            <textarea id="editDescription" class="history__form-textarea" rows="3" placeholder="Enter description"></textarea>
+          </div>
+          
+          <div class="history__form-group">
+            <label class="history__form-label">Source</label>
+            <input type="text" id="editSource" class="history__form-input" placeholder="https://example.com">
+          </div>
+          
+          <div class="history__form-group">
+            <label class="history__form-label">Tags (max 5)</label>
+            <div class="history__tags-input-wrapper">
+              <input type="text" id="editTagsInput" class="history__form-input" placeholder="Type to add tags..." autocomplete="off">
+              <div id="editTagsSuggestions" class="history__tags-suggestions" style="display: none;"></div>
+            </div>
+            <div id="editSelectedTags" class="history__selected-tags"></div>
+          </div>
+          
+          <button id="saveEditBtn" class="history__save-edit-btn">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="addNewModal" class="history__modal" style="display: none;">
+    <div class="history__modal-content">
+      <div class="history__modal-header">
+        <h3>Add New Translation</h3>
+        <button id="closeAddNewModalBtn" class="history__modal-close">&times;</button>
+      </div>
+      <div class="history__modal-body">
+        <div class="history__add-new-form">
+          <div class="history__form-row">
+            <div class="history__form-group">
+              <label for="addNewSourceLang">Source Language:</label>
+              <select id="addNewSourceLang" class="history__input">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="ru">Russian</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="zh">Chinese</option>
+                <option value="ar">Arabic</option>
+                <option value="hi">Hindi</option>
+              </select>
+            </div>
+            <div class="history__form-group">
+              <label for="addNewTargetLang">Target Language:</label>
+              <select id="addNewTargetLang" class="history__input">
+                <option value="ru">Russian</option>
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="zh">Chinese</option>
+                <option value="ar">Arabic</option>
+                <option value="hi">Hindi</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="history__form-group">
+            <div class="history__form-label-with-btn">
+              <label for="addNewOriginal">Original Text:</label>
+              <button type="button" id="generateTranslationBtn" class="history__generate-btn history__generate-btn--small" title="Generate Translation">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                Generate
+              </button>
+            </div>
+            <textarea id="addNewOriginal" class="history__textarea" rows="3" placeholder="Enter original text..." required></textarea>
+          </div>
+          
+          <div class="history__form-group">
+            <div class="history__form-label-with-btn">
+              <label for="addNewTranslation">Translation:</label>
+              <button type="button" id="generateOriginalBtn" class="history__generate-btn history__generate-btn--small" title="Generate Original">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                Generate
+              </button>
+            </div>
+            <textarea id="addNewTranslation" class="history__textarea" rows="3" placeholder="Enter translation..." required></textarea>
+          </div>
+          
+          <div class="history__form-group">
+            <label for="addNewCategory">Category (optional):</label>
+            <select id="addNewCategory" class="history__select">
+              <option value="">Select category...</option>
+            </select>
+          </div>
+          
+          <div class="history__form-group">
+            <label for="addNewContext">Context (optional):</label>
+            <textarea id="addNewContext" class="history__textarea" rows="2" placeholder="Enter context..."></textarea>
+          </div>
+          
+          <div class="history__form-group">
+            <label for="addNewDescription">Description (optional):</label>
+            <textarea id="addNewDescription" class="history__textarea" rows="2" placeholder="Enter description..."></textarea>
+          </div>
+          
+          <div class="history__form-group">
+            <label for="addNewSource">Source (optional):</label>
+            <input type="text" id="addNewSource" class="history__input" placeholder="https://example.com">
+          </div>
+          
+          <button id="saveAddNewBtn" class="history__save-edit-btn">Add Translation</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="moreInfoModal" class="history__modal" style="display: none;">
+    <div class="history__modal-content history__modal-content--large">
+      <div class="history__modal-header">
+        <div class="history__nav-buttons">
+          <button id="prevCardBtn" class="history__nav-btn history__nav-btn--prev" title="Previous card">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button id="nextCardBtn" class="history__nav-btn history__nav-btn--next" title="Next card">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+        <div class="history__modal-info">
+          <span id="moreInfoLangPair" class="history__lang-pair"></span>
+          <span id="moreInfoCategoryBadge" class="history__category-badge"></span>
+          <div id="moreInfoTags" class="history__modal-tags"></div>
+          <div class="history__modal-status-buttons">
+            <button class="history__modal-status-btn history__modal-status-btn--new" id="moreInfoStatusNew" title="To Learn"></button>
+            <button class="history__modal-status-btn history__modal-status-btn--learning" id="moreInfoStatusLearning" title="Learning"></button>
+            <button class="history__modal-status-btn history__modal-status-btn--learned" id="moreInfoStatusLearned" title="Learned"></button>
+          </div>
+        </div>
+        <button id="closeMoreInfoModalBtn" class="history__modal-close">&times;</button>
+      </div>
+      <div class="history__modal-body">
+        <div class="history__more-info-content">
+          <div class="history__more-info-text-sections">
+            <div id="moreInfoOriginalSection" class="history__info-section">
+              <div class="history__info-section-header">
+                <button id="moreInfoPlayOriginal" class="history__info-play-btn" title="Play original">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </button>
+                <strong>Original:</strong>
+              </div>
+              <div id="moreInfoOriginal" class="history__info-text"></div>
+            </div>
+            
+            <div id="moreInfoTranslationSection" class="history__info-section">
+              <div class="history__info-section-header">
+                <button id="moreInfoPlayTranslation" class="history__info-play-btn" title="Play translation">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </button>
+                <strong>Translation:</strong>
+              </div>
+              <div id="moreInfoTranslation" class="history__info-text history__info-text--translation"></div>
+            </div>
+            
+            <div class="history__info-verify">
+              <input type="text" id="moreInfoVerifyInput" class="history__item-input" placeholder="Type to verify...">
+            </div>
+          </div>
+          
+          <div id="moreInfoImage" class="history__more-info-image" style="display: none;">
+            <img src="" alt="Card image">
+          </div>
+        </div>
+        
+        <div id="moreInfoCustomTitle" class="history__info-display history__info-display--full" style="display: none;">
+          <strong>Title:</strong> <span></span>
+        </div>
+        
+        <div id="moreInfoContext" class="history__info-display history__info-display--full" style="display: none;">
+          <strong>Context:</strong> <span></span>
+        </div>
+        
+        <div id="moreInfoDescription" class="history__info-display history__info-display--full" style="display: none;">
+          <strong>Description:</strong> <span></span>
+        </div>
+        
+        <div id="moreInfoSource" class="history__info-display history__info-display--full" style="display: none;">
+          <strong>Source:</strong> <a href="" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="history.js"></script>
+</body>
+</html>

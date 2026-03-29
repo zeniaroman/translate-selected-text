@@ -1,0 +1,254 @@
+/* Category Management Modal */
+.history__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.history__modal-content {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.history__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.history__modal-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.history__modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.history__modal-close:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.history__modal-body {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.history__category-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.history__category-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.history__category-input input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.history__category-input button {
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.history__category-input button:hover {
+  background: #2563eb;
+}
+
+.history__categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history__category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.history__category-item:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.history__category-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+  flex: 1;
+}
+
+.history__category-edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1f2937;
+  outline: none;
+}
+
+.history__category-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.history__category-edit,
+.history__category-delete {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.history__category-edit {
+  color: #3b82f6;
+}
+
+.history__category-edit:hover {
+  background: #dbeafe;
+}
+
+.history__category-delete {
+  color: #ef4444;
+}
+
+.history__category-delete:hover {
+  background: #fee2e2;
+}
+
+/* Category Filter */
+.history__filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.history__filter-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.history__category-filter {
+  flex: 1;
+  max-width: 300px;
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.history__category-filter:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Actions Container */
+.history__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.history__manage-btn {
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: #ffffff;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.history__manage-btn:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* Category Badge in History Item */
+.history__item-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history__item-category {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}

@@ -1,0 +1,243 @@
+/* Фиксированная кнопка перевода */
+.translate-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.translate-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.5);
+}
+
+.translate-float-btn:active {
+  transform: scale(0.95);
+}
+
+/* Форма перевода */
+.translate-float-form {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 380px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.translate-float-form__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.translate-float-form__header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.translate-float-form__close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.translate-float-form__close:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.translate-float-form__content {
+  padding: 20px;
+}
+
+.translate-float-form__input-group {
+  margin-bottom: 16px;
+}
+
+.translate-float-form__lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.translate-float-form__lang-btn:hover {
+  background: #f3f4f6;
+}
+
+.translate-float-form__textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1f2937;
+  resize: vertical;
+  min-height: 80px;
+  transition: all 0.2s ease;
+}
+
+.translate-float-form__textarea:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.translate-float-form__textarea::placeholder {
+  color: #9ca3af;
+}
+
+.translate-float-form__result {
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.translate-float-form__result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.translate-float-form__result-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.translate-float-form__result-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.translate-float-form__play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #10b981;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.translate-float-form__play-btn svg {
+  margin-left: 1px;
+}
+
+.translate-float-form__play-btn:hover {
+  background: #059669;
+  transform: scale(1.1);
+}
+
+.translate-float-form__play-btn:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+.translate-float-form__play-btn--header {
+  width: 28px;
+  height: 28px;
+}
+
+.translate-float-form__add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #8b5cf6;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.translate-float-form__add-btn:hover {
+  background: #7c3aed;
+  transform: scale(1.1);
+}
+
+.translate-float-form__add-btn:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+.translate-float-form__translation {
+  font-size: 16px;
+  color: #1f2937;
+  line-height: 1.6;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  min-height: 60px;
+}
+
+@media (max-width: 768px) {
+  .translate-float-form {
+    width: calc(100vw - 48px);
+    right: 24px;
+    left: 24px;
+  }
+  
+  .translate-float-btn {
+    bottom: 16px;
+    right: 16px;
+  }
+}

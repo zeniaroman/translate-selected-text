@@ -1,0 +1,126 @@
+/* Tags Styles */
+.history__item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.history__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.history__tag-remove {
+  background: none;
+  border: none;
+  color: #1e40af;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 2px;
+  transition: color 0.15s ease;
+}
+
+.history__tag-remove:hover {
+  color: #1e3a8a;
+}
+
+.history__no-tags {
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Tags Input in Edit Modal */
+.history__tags-input-wrapper {
+  position: relative;
+}
+
+.history__tags-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.history__tag-suggestion {
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.history__tag-suggestion:hover {
+  background: #f3f4f6;
+}
+
+.history__selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  min-height: 32px;
+}
+
+/* Modal Tags */
+.history__modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Actions Right Container */
+.history__item-actions-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.history__item-edit-btn,
+.history__item-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.history__item-edit-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #1f2937;
+}
+
+.history__item-more-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #1f2937;
+}

@@ -1,0 +1,333 @@
+.translate-popup {
+  position: absolute;
+  max-width: 400px;
+  min-width: 280px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1f2937;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+.translate-popup--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.translate-popup__content {
+  padding: 16px;
+}
+
+.translate-popup__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.translate-popup__lang-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.translate-popup__header-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.translate-popup__discard,
+.translate-popup__close {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  padding: 0;
+}
+
+.translate-popup__discard {
+  color: #ef4444;
+}
+
+.translate-popup__discard:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.translate-popup__close {
+  font-size: 24px;
+  line-height: 1;
+  color: #9ca3af;
+}
+
+.translate-popup__close:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.translate-popup__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.translate-popup__label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.translate-popup__label-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.translate-popup__label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.translate-popup__play-inline,
+.translate-popup__copy-inline {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.translate-popup__copy-inline {
+  background: #3b82f6;
+}
+
+.translate-popup__play-inline:hover {
+  background: #059669;
+  transform: scale(1.1);
+}
+
+.translate-popup__copy-inline:hover {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+.translate-popup__play-inline:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+}
+
+.translate-popup__play-inline svg {
+  margin-left: 1px;
+}
+
+.translate-popup__original {
+  margin-bottom: 12px;
+}
+
+.translate-popup__translation {
+  margin-bottom: 12px;
+}
+
+.translate-popup__text {
+  padding: 10px 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  color: #1f2937;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.translate-popup__translation .translate-popup__text {
+  background: #eff6ff;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.translate-popup__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.translate-popup__play,
+.translate-popup__category {
+  flex: 1;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #1f2937;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.translate-popup__category:hover {
+  border-color: #3b82f6;
+}
+
+.translate-popup__category:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.translate-popup__play:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.translate-popup__copy:hover {
+  background: #2563eb;
+}
+
+.translate-popup__copy:active,
+.translate-popup__play:active {
+  transform: scale(0.98);
+}
+
+.translate-popup__copy svg,
+.translate-popup__play svg {
+  flex-shrink: 0;
+}
+
+.translate-popup--loading .translate-popup__content {
+  padding: 20px;
+}
+
+.translate-popup__loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.translate-popup__spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: translate-popup-spin 0.8s linear infinite;
+}
+
+@keyframes translate-popup-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.translate-popup--error .translate-popup__content {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.translate-popup__error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.translate-popup__error svg {
+  flex-shrink: 0;
+  color: #ef4444;
+}
+
+.translate-popup--error .translate-popup__close {
+  color: #dc2626;
+}
+
+.translate-popup--error .translate-popup__close:hover {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .translate-popup {
+    background: #1f2937;
+    color: #f9fafb;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .translate-popup__lang-badge {
+    background: #374151;
+    color: #9ca3af;
+  }
+
+  .translate-popup__close {
+    color: #6b7280;
+  }
+
+  .translate-popup__close:hover {
+    background: #374151;
+    color: #f9fafb;
+  }
+
+  .translate-popup__label {
+    color: #9ca3af;
+  }
+
+  .translate-popup__text {
+    background: #374151;
+    color: #f9fafb;
+  }
+
+  .translate-popup__translation .translate-popup__text {
+    background: #1e3a8a;
+    color: #bfdbfe;
+  }
+
+  .translate-popup__spinner {
+    border-color: #374151;
+    border-top-color: #3b82f6;
+  }
+
+  .translate-popup--error .translate-popup__close:hover {
+    background: #7f1d1d;
+  }
+}

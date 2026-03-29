@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Спряжение испанских глаголов</title>
+  <link rel="stylesheet" href="styles/history.css">
+  <link rel="stylesheet" href="styles/history-buttons.css">
+  <link rel="stylesheet" href="styles/learn-es.css">
+  <link rel="stylesheet" href="styles/learn-es-grammar.css">
+  <link rel="stylesheet" href="styles/verb-conjugation.css">
+  <link rel="stylesheet" href="styles/translate-float.css">
+</head>
+<body>
+  <div class="history">
+    <div class="history__header">
+      <h1 class="history__title">Спряжение испанских глаголов</h1>
+      <p class="learn-es__subtitle">Интерактивная таблица спряжения глаголов по временам</p>
+      <div class="learn-es__controls">
+        <button class="learn-es__back-btn" id="backToGrammarBtn">← Назад к грамматике</button>
+      </div>
+    </div>
+
+    <div class="verb-conjugation">
+      <div class="verb-conjugation__sidebar">
+        
+        <section class="verb-group">
+          <h2 class="verb-group__title">Глаголы на -AR</h2>
+          <div class="verb-group__description">
+            <p class="verb-group__rule"><strong>Правило:</strong> Убираем -ar и добавляем окончания:</p>
+            
+            <div class="verb-group__tabs">
+              <button class="verb-group__tab verb-group__tab--active" data-group="ar" data-tense="presente">Настоящее</button>
+              <button class="verb-group__tab" data-group="ar" data-tense="preterito">Прошедшее</button>
+              <button class="verb-group__tab" data-group="ar" data-tense="futuro">Будущее</button>
+            </div>
+            
+            <div class="verb-group__tab-content">
+              <div class="verb-group__endings-panel verb-group__endings-panel--active" data-group="ar" data-tense="presente">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -o</li>
+                  <li><strong>tú:</strong> -as</li>
+                  <li><strong>él/ella:</strong> -a</li>
+                  <li><strong>nosotros:</strong> -amos</li>
+                  <li><strong>vosotros:</strong> -áis</li>
+                  <li><strong>ellos/ellas:</strong> -an</li>
+                </ul>
+              </div>
+              
+              <div class="verb-group__endings-panel" data-group="ar" data-tense="preterito">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -é</li>
+                  <li><strong>tú:</strong> -aste</li>
+                  <li><strong>él/ella:</strong> -ó</li>
+                  <li><strong>nosotros:</strong> -amos</li>
+                  <li><strong>vosotros:</strong> -asteis</li>
+                  <li><strong>ellos/ellas:</strong> -aron</li>
+                </ul>
+              </div>
+              
+              <div class="verb-group__endings-panel" data-group="ar" data-tense="futuro">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -aré</li>
+                  <li><strong>tú:</strong> -arás</li>
+                  <li><strong>él/ella:</strong> -ará</li>
+                  <li><strong>nosotros:</strong> -aremos</li>
+                  <li><strong>vosotros:</strong> -aréis</li>
+                  <li><strong>ellos/ellas:</strong> -arán</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="verb-list" id="verbListAR"></div>
+        </section>
+
+        <section class="verb-group">
+          <h2 class="verb-group__title">Глаголы на -ER</h2>
+          <div class="verb-group__description">
+            <p class="verb-group__rule"><strong>Правило:</strong> Убираем -er и добавляем окончания:</p>
+            
+            <div class="verb-group__tabs">
+              <button class="verb-group__tab verb-group__tab--active" data-group="er" data-tense="presente">Настоящее</button>
+              <button class="verb-group__tab" data-group="er" data-tense="preterito">Прошедшее</button>
+              <button class="verb-group__tab" data-group="er" data-tense="futuro">Будущее</button>
+            </div>
+            
+            <div class="verb-group__tab-content">
+              <div class="verb-group__endings-panel verb-group__endings-panel--active" data-group="er" data-tense="presente">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -o</li>
+                  <li><strong>tú:</strong> -es</li>
+                  <li><strong>él/ella:</strong> -e</li>
+                  <li><strong>nosotros:</strong> -emos</li>
+                  <li><strong>vosotros:</strong> -éis</li>
+                  <li><strong>ellos/ellas:</strong> -en</li>
+                </ul>
+              </div>
+              
+              <div class="verb-group__endings-panel" data-group="er" data-tense="preterito">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -í</li>
+                  <li><strong>tú:</strong> -iste</li>
+                  <li><strong>él/ella:</strong> -ió</li>
+                  <li><strong>nosotros:</strong> -imos</li>
+                  <li><strong>vosotros:</strong> -isteis</li>
+                  <li><strong>ellos/ellas:</strong> -ieron</li>
+                </ul>
+              </div>
+              
+              <div class="verb-group__endings-panel" data-group="er" data-tense="futuro">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -eré</li>
+                  <li><strong>tú:</strong> -erás</li>
+                  <li><strong>él/ella:</strong> -erá</li>
+                  <li><strong>nosotros:</strong> -eremos</li>
+                  <li><strong>vosotros:</strong> -eréis</li>
+                  <li><strong>ellos/ellas:</strong> -erán</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="verb-list" id="verbListER"></div>
+        </section>
+
+        <section class="verb-group">
+          <h2 class="verb-group__title">Глаголы на -IR</h2>
+          <div class="verb-group__description">
+            <p class="verb-group__rule"><strong>Правило:</strong> Убираем -ir и добавляем окончания:</p>
+            
+            <div class="verb-group__tabs">
+              <button class="verb-group__tab verb-group__tab--active" data-group="ir" data-tense="presente">Настоящее</button>
+              <button class="verb-group__tab" data-group="ir" data-tense="preterito">Прошедшее</button>
+              <button class="verb-group__tab" data-group="ir" data-tense="futuro">Будущее</button>
+            </div>
+            
+            <div class="verb-group__tab-content">
+              <div class="verb-group__endings-panel verb-group__endings-panel--active" data-group="ir" data-tense="presente">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -o</li>
+                  <li><strong>tú:</strong> -es</li>
+                  <li><strong>él/ella:</strong> -e</li>
+                  <li><strong>nosotros:</strong> -imos</li>
+                  <li><strong>vosotros:</strong> -ís</li>
+                  <li><strong>ellos/ellas:</strong> -en</li>
+                </ul>
+              </div>
+              
+              <div class="verb-group__endings-panel" data-group="ir" data-tense="preterito">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -í</li>
+                  <li><strong>tú:</strong> -iste</li>
+                  <li><strong>él/ella:</strong> -ió</li>
+                  <li><strong>nosotros:</strong> -imos</li>
+                  <li><strong>vosotros:</strong> -isteis</li>
+                  <li><strong>ellos/ellas:</strong> -ieron</li>
+                </ul>
+              </div>
+              
+              <div class="verb-group__endings-panel" data-group="ir" data-tense="futuro">
+                <ul class="verb-group__endings">
+                  <li><strong>yo:</strong> -iré</li>
+                  <li><strong>tú:</strong> -irás</li>
+                  <li><strong>él/ella:</strong> -irá</li>
+                  <li><strong>nosotros:</strong> -iremos</li>
+                  <li><strong>vosotros:</strong> -iréis</li>
+                  <li><strong>ellos/ellas:</strong> -irán</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="verb-list" id="verbListIR"></div>
+        </section>
+
+        <section class="verb-group verb-group--irregular">
+          <h2 class="verb-group__title">Неправильные глаголы</h2>
+          <div class="verb-group__description">
+            <p class="verb-group__rule"><strong>⚠️ Внимание:</strong> Эти глаголы имеют особые формы спряжения, которые нужно запомнить. Они не следуют стандартным правилам.</p>
+          </div>
+          <div class="verb-list" id="verbListIrregular"></div>
+        </section>
+
+      </div>
+
+      <div class="verb-conjugation__main">
+        <div class="verb-conjugation__header">
+          <h2 class="verb-conjugation__verb-title" id="currentVerbTitle">Выберите глагол из списка</h2>
+          <p class="verb-conjugation__verb-translation" id="currentVerbTranslation"></p>
+        </div>
+
+        <div class="verb-conjugation__table-container" id="conjugationTableContainer">
+          <p class="verb-conjugation__placeholder">Выберите глагол из списка слева, чтобы увидеть его спряжение</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="translateFloatBtn" class="translate-float-btn" title="Открыть форму перевода">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M5 8h14M5 8a2 2 0 1 1 0-4h14a2 2 0 1 1 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"></path>
+    </svg>
+  </button>
+
+  <div id="translateFloatForm" class="translate-float-form" style="display: none;">
+    <div class="translate-float-form__header">
+      <div class="translate-float-form__header-left">
+        <button id="langSwitchBtn" class="translate-float-form__lang-btn">
+          <span id="currentLangLabel">ES → RU</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="17 1 21 5 17 9"></polyline>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <polyline points="7 23 3 19 7 15"></polyline>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+        </button>
+        <button id="playInputBtn" class="translate-float-form__play-btn translate-float-form__play-btn--header" title="Воспроизвести введённый текст">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+      </div>
+      <button id="closeTranslateForm" class="translate-float-form__close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="translate-float-form__content">
+      <div class="translate-float-form__input-group">
+        <textarea id="translateInput" class="translate-float-form__textarea" placeholder="Введите текст для перевода..." rows="3"></textarea>
+      </div>
+
+      <div class="translate-float-form__result" id="translateResult" style="display: none;">
+        <div class="translate-float-form__result-header">
+          <span class="translate-float-form__result-label">Перевод:</span>
+          <div class="translate-float-form__result-actions">
+            <button id="playTranslationBtn" class="translate-float-form__play-btn" title="Воспроизвести перевод">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+            <button id="addToHistoryBtn" class="translate-float-form__add-btn" title="Добавить в историю">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="translationText" class="translate-float-form__translation"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="learn-es-data.js"></script>
+  <script src="learn-es-grammar-verb.js"></script>
+  <script src="translate-float.js"></script>
+</body>
+</html>

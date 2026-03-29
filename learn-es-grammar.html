@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Грамматика испанского языка</title>
+  <link rel="stylesheet" href="styles/history.css">
+  <link rel="stylesheet" href="styles/history-buttons.css">
+  <link rel="stylesheet" href="styles/learn-es.css">
+  <link rel="stylesheet" href="styles/learn-es-grammar.css">
+</head>
+<body>
+  <div class="history">
+    <div class="history__header">
+      <h1 class="history__title">Грамматика испанского языка</h1>
+      <p class="learn-es__subtitle">Метод Эрика Гуннемарка - Основы грамматики с интерактивными упражнениями</p>
+      <div class="learn-es__controls">
+        <button class="learn-es__back-btn" id="backToWordsBtn">← Назад к словам</button>
+        <button class="learn-es__verb-btn" id="verbConjugationBtn">Спряжение глаголов →</button>
+      </div>
+      
+      <div class="grammar__progress">
+        <span class="grammar__progress-label">Прогресс упражнений:</span>
+        <div class="grammar__progress-bar">
+          <div class="grammar__progress-fill" id="progressFill"></div>
+        </div>
+        <span class="grammar__progress-text" id="progressText">0/0</span>
+      </div>
+    </div>
+
+    <div class="grammar__container">
+      <aside class="grammar__toc">
+        <h3 class="grammar__toc-title">Содержание</h3>
+        <nav class="grammar__toc-nav">
+          <a href="#articulos" class="grammar__toc-link">1. Артикли</a>
+          <a href="#genero" class="grammar__toc-link">2. Род существительных</a>
+          <a href="#plural" class="grammar__toc-link">3. Множественное число</a>
+          <a href="#pronombres" class="grammar__toc-link">4. Личные местоимения</a>
+          <a href="#posesivos" class="grammar__toc-link">5. Притяжательные местоимения</a>
+          <a href="#presente" class="grammar__toc-link">6. Настоящее время</a>
+          <a href="#irregulares" class="grammar__toc-link">7. Неправильные глаголы</a>
+          <a href="#preterito" class="grammar__toc-link">8. Прошедшее время</a>
+          <a href="#imperfecto" class="grammar__toc-link">9. Прошедшее незавершенное</a>
+          <a href="#futuro" class="grammar__toc-link">10. Будущее время</a>
+          <a href="#orden" class="grammar__toc-link">11. Порядок слов</a>
+          <a href="#negacion" class="grammar__toc-link">12. Отрицание</a>
+          <a href="#preguntas" class="grammar__toc-link">13. Вопросы</a>
+          <a href="#preposiciones" class="grammar__toc-link">14. Предлоги</a>
+          <a href="#lifehacks" class="grammar__toc-link">15. Лайфхаки</a>
+        </nav>
+      </aside>
+
+      <main class="grammar__content">
+        
+        <section id="articulos" class="grammar__section">
+          <h2 class="grammar__section-title">1. Артикли (Artículos)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Определенные артикли (Artículos definidos)</h3>
+            <p class="grammar__text">В испанском языке артикли согласуются с существительным по роду и числу:</p>
+            
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Мужской род</th>
+                  <th>Женский род</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Единственное число</strong></td>
+                  <td>el (the)</td>
+                  <td>la (the)</td>
+                </tr>
+                <tr>
+                  <td><strong>Множественное число</strong></td>
+                  <td>los (the)</td>
+                  <td>las (the)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__examples">
+              <p><strong>Примеры:</strong></p>
+              <ul>
+                <li><span class="grammar__spanish">el libro</span> - книга (м.р.)</li>
+                <li><span class="grammar__spanish">la casa</span> - дом (ж.р.)</li>
+                <li><span class="grammar__spanish">los libros</span> - книги</li>
+                <li><span class="grammar__spanish">las casas</span> - дома</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Неопределенные артикли (Artículos indefinidos)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Мужской род</th>
+                  <th>Женский род</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Единственное число</strong></td>
+                  <td>un (a/an)</td>
+                  <td>una (a/an)</td>
+                </tr>
+                <tr>
+                  <td><strong>Множественное число</strong></td>
+                  <td>unos (some)</td>
+                  <td>unas (some)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__examples">
+              <p><strong>Примеры:</strong></p>
+              <ul>
+                <li><span class="grammar__spanish">un perro</span> - собака (одна)</li>
+                <li><span class="grammar__spanish">una mesa</span> - стол (один)</li>
+                <li><span class="grammar__spanish">unos amigos</span> - несколько друзей</li>
+                <li><span class="grammar__spanish">unas flores</span> - несколько цветов</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 1: Выберите правильный артикль</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. ___ gato (кот)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q1" value="el"> el</label>
+                  <label><input type="radio" name="q1" value="la"> la</label>
+                  <label><input type="radio" name="q1" value="los"> los</label>
+                  <label><input type="radio" name="q1" value="las"> las</label>
+                </div>
+                <div class="grammar__feedback" data-answer="el"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. ___ ventana (окно)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q2" value="el"> el</label>
+                  <label><input type="radio" name="q2" value="la"> la</label>
+                  <label><input type="radio" name="q2" value="los"> los</label>
+                  <label><input type="radio" name="q2" value="las"> las</label>
+                </div>
+                <div class="grammar__feedback" data-answer="la"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. ___ niños (дети)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q3" value="el"> el</label>
+                  <label><input type="radio" name="q3" value="la"> la</label>
+                  <label><input type="radio" name="q3" value="los"> los</label>
+                  <label><input type="radio" name="q3" value="las"> las</label>
+                </div>
+                <div class="grammar__feedback" data-answer="los"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. ___ mesas (столы)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q4" value="el"> el</label>
+                  <label><input type="radio" name="q4" value="la"> la</label>
+                  <label><input type="radio" name="q4" value="los"> los</label>
+                  <label><input type="radio" name="q4" value="las"> las</label>
+                </div>
+                <div class="grammar__feedback" data-answer="las"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. ___ coche (машина)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q5" value="un"> un</label>
+                  <label><input type="radio" name="q5" value="una"> una</label>
+                  <label><input type="radio" name="q5" value="unos"> unos</label>
+                  <label><input type="radio" name="q5" value="unas"> unas</label>
+                </div>
+                <div class="grammar__feedback" data-answer="un"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="1">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="1">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="genero" class="grammar__section">
+          <h2 class="grammar__section-title">2. Род существительных (Género)</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">В испанском языке все существительные имеют род: мужской (masculino) или женский (femenino).</p>
+            
+            <h3 class="grammar__subtitle">Мужской род (Masculino)</h3>
+            <div class="grammar__rule">
+              <p><strong>Обычно заканчиваются на:</strong></p>
+              <ul>
+                <li><strong>-o:</strong> <span class="grammar__spanish">el libro</span> (книга), <span class="grammar__spanish">el perro</span> (собака)</li>
+                <li><strong>-or:</strong> <span class="grammar__spanish">el doctor</span> (доктор), <span class="grammar__spanish">el amor</span> (любовь)</li>
+                <li><strong>-aje:</strong> <span class="grammar__spanish">el viaje</span> (путешествие), <span class="grammar__spanish">el mensaje</span> (сообщение)</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Женский род (Femenino)</h3>
+            <div class="grammar__rule">
+              <p><strong>Обычно заканчиваются на:</strong></p>
+              <ul>
+                <li><strong>-a:</strong> <span class="grammar__spanish">la casa</span> (дом), <span class="grammar__spanish">la mesa</span> (стол)</li>
+                <li><strong>-ción:</strong> <span class="grammar__spanish">la canción</span> (песня), <span class="grammar__spanish">la nación</span> (нация)</li>
+                <li><strong>-dad/-tad:</strong> <span class="grammar__spanish">la ciudad</span> (город), <span class="grammar__spanish">la libertad</span> (свобода)</li>
+              </ul>
+            </div>
+
+            <div class="grammar__warning">
+              <p><strong>⚠️ Исключения:</strong></p>
+              <ul>
+                <li><span class="grammar__spanish">el día</span> (день) - мужской род!</li>
+                <li><span class="grammar__spanish">la mano</span> (рука) - женский род!</li>
+                <li><span class="grammar__spanish">el problema</span> (проблема) - мужской род!</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 2: Определите род существительного</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. universidad (университет)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q6" value="masculino"> Мужской род</label>
+                  <label><input type="radio" name="q6" value="femenino"> Женский род</label>
+                </div>
+                <div class="grammar__feedback" data-answer="femenino"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. profesor (учитель)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q7" value="masculino"> Мужской род</label>
+                  <label><input type="radio" name="q7" value="femenino"> Женский род</label>
+                </div>
+                <div class="grammar__feedback" data-answer="masculino"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. canción (песня)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q8" value="masculino"> Мужской род</label>
+                  <label><input type="radio" name="q8" value="femenino"> Женский род</label>
+                </div>
+                <div class="grammar__feedback" data-answer="femenino"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. garaje (гараж)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q9" value="masculino"> Мужской род</label>
+                  <label><input type="radio" name="q9" value="femenino"> Женский род</label>
+                </div>
+                <div class="grammar__feedback" data-answer="masculino"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. mano (рука)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q10" value="masculino"> Мужской род</label>
+                  <label><input type="radio" name="q10" value="femenino"> Женский род</label>
+                </div>
+                <div class="grammar__feedback" data-answer="femenino"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="2">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="2">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="plural" class="grammar__section">
+          <h2 class="grammar__section-title">3. Множественное число (Plural)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Правила образования</h3>
+            
+            <div class="grammar__rule">
+              <p><strong>1. Если слово заканчивается на гласную → добавляем -s</strong></p>
+              <ul>
+                <li><span class="grammar__spanish">casa → casas</span> (дом → дома)</li>
+                <li><span class="grammar__spanish">libro → libros</span> (книга → книги)</li>
+                <li><span class="grammar__spanish">estudiante → estudiantes</span> (студент → студенты)</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>2. Если слово заканчивается на согласную → добавляем -es</strong></p>
+              <ul>
+                <li><span class="grammar__spanish">profesor → profesores</span> (учитель → учителя)</li>
+                <li><span class="grammar__spanish">ciudad → ciudades</span> (город → города)</li>
+                <li><span class="grammar__spanish">animal → animales</span> (животное → животные)</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>3. Если слово заканчивается на -z → меняем на -ces</strong></p>
+              <ul>
+                <li><span class="grammar__spanish">lápiz → lápices</span> (карандаш → карандаши)</li>
+                <li><span class="grammar__spanish">vez → veces</span> (раз → разы)</li>
+                <li><span class="grammar__spanish">pez → peces</span> (рыба → рыбы)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 3: Образуйте множественное число</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. perro → <input type="text" class="grammar__input" data-answer="perros" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. flor → <input type="text" class="grammar__input" data-answer="flores" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. luz → <input type="text" class="grammar__input" data-answer="luces" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. mesa → <input type="text" class="grammar__input" data-answer="mesas" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. actor → <input type="text" class="grammar__input" data-answer="actores" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>6. café → <input type="text" class="grammar__input" data-answer="cafés" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="3">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="3">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="pronombres" class="grammar__section">
+          <h2 class="grammar__section-title">4. Личные местоимения (Pronombres personales)</h2>
+          
+          <div class="grammar__theory">
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Испанский</th>
+                  <th>Русский</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>yo</strong></td>
+                  <td>я</td>
+                  <td><span class="grammar__spanish">Yo hablo español</span> - Я говорю по-испански</td>
+                </tr>
+                <tr>
+                  <td><strong>tú</strong></td>
+                  <td>ты</td>
+                  <td><span class="grammar__spanish">Tú hablas inglés</span> - Ты говоришь по-английски</td>
+                </tr>
+                <tr>
+                  <td><strong>él/ella/usted</strong></td>
+                  <td>он/она/Вы (вежл.)</td>
+                  <td><span class="grammar__spanish">Él habla francés</span> - Он говорит по-французски</td>
+                </tr>
+                <tr>
+                  <td><strong>nosotros/nosotras</strong></td>
+                  <td>мы</td>
+                  <td><span class="grammar__spanish">Nosotros hablamos ruso</span> - Мы говорим по-русски</td>
+                </tr>
+                <tr>
+                  <td><strong>vosotros/vosotras</strong></td>
+                  <td>вы (мн.ч.)</td>
+                  <td><span class="grammar__spanish">Vosotros habláis alemán</span> - Вы говорите по-немецки</td>
+                </tr>
+                <tr>
+                  <td><strong>ellos/ellas/ustedes</strong></td>
+                  <td>они/Вы (вежл. мн.ч.)</td>
+                  <td><span class="grammar__spanish">Ellos hablan chino</span> - Они говорят по-китайски</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__note">
+              <p><strong>💡 Примечание:</strong> В испанском языке местоимение часто опускается, так как форма глагола уже указывает на лицо.</p>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 4: Выберите правильное местоимение</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. ___ soy estudiante (Я студент)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q11" value="yo"> yo</label>
+                  <label><input type="radio" name="q11" value="tú"> tú</label>
+                  <label><input type="radio" name="q11" value="él"> él</label>
+                </div>
+                <div class="grammar__feedback" data-answer="yo"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. ___ son profesores (Они учителя)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q12" value="nosotros"> nosotros</label>
+                  <label><input type="radio" name="q12" value="ellos"> ellos</label>
+                  <label><input type="radio" name="q12" value="vosotros"> vosotros</label>
+                </div>
+                <div class="grammar__feedback" data-answer="ellos"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. ___ eres mi amigo (Ты мой друг)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q13" value="yo"> yo</label>
+                  <label><input type="radio" name="q13" value="tú"> tú</label>
+                  <label><input type="radio" name="q13" value="él"> él</label>
+                </div>
+                <div class="grammar__feedback" data-answer="tú"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="4">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="4">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="posesivos" class="grammar__section">
+          <h2 class="grammar__section-title">5. Притяжательные местоимения (Posesivos)</h2>
+          
+          <div class="grammar__theory">
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Единственное число</th>
+                  <th>Множественное число</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>yo</td>
+                  <td>mi (мой/моя)</td>
+                  <td>mis (мои)</td>
+                </tr>
+                <tr>
+                  <td>tú</td>
+                  <td>tu (твой/твоя)</td>
+                  <td>tus (твои)</td>
+                </tr>
+                <tr>
+                  <td>él/ella</td>
+                  <td>su (его/её)</td>
+                  <td>sus (его/её мн.)</td>
+                </tr>
+                <tr>
+                  <td>nosotros</td>
+                  <td>nuestro/nuestra (наш/наша)</td>
+                  <td>nuestros/nuestras (наши)</td>
+                </tr>
+                <tr>
+                  <td>vosotros</td>
+                  <td>vuestro/vuestra (ваш/ваша)</td>
+                  <td>vuestros/vuestras (ваши)</td>
+                </tr>
+                <tr>
+                  <td>ellos/ellas</td>
+                  <td>su (их)</td>
+                  <td>sus (их мн.)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__examples">
+              <p><strong>Примеры:</strong></p>
+              <ul>
+                <li><span class="grammar__spanish">mi casa</span> - мой дом</li>
+                <li><span class="grammar__spanish">tus libros</span> - твои книги</li>
+                <li><span class="grammar__spanish">nuestra familia</span> - наша семья</li>
+                <li><span class="grammar__spanish">sus amigos</span> - их друзья</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 5: Заполните пропуски</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. ___ madre (моя мама) → <input type="text" class="grammar__input" data-answer="mi" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. ___ hermanos (твои братья) → <input type="text" class="grammar__input" data-answer="tus" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. ___ coche (его машина) → <input type="text" class="grammar__input" data-answer="su" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. ___ casa (наш дом) → <input type="text" class="grammar__input" data-answer="nuestra" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="5">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="5">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="presente" class="grammar__section">
+          <h2 class="grammar__section-title">6. Настоящее время (Presente)</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">В испанском языке глаголы делятся на три группы по окончанию инфинитива:</p>
+            
+            <h3 class="grammar__subtitle">Глаголы на -AR (hablar - говорить)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Форма</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>yo</td><td>habl<strong>o</strong></td><td>я говорю</td></tr>
+                <tr><td>tú</td><td>habl<strong>as</strong></td><td>ты говоришь</td></tr>
+                <tr><td>él/ella</td><td>habl<strong>a</strong></td><td>он/она говорит</td></tr>
+                <tr><td>nosotros</td><td>habl<strong>amos</strong></td><td>мы говорим</td></tr>
+                <tr><td>vosotros</td><td>habl<strong>áis</strong></td><td>вы говорите</td></tr>
+                <tr><td>ellos/ellas</td><td>habl<strong>an</strong></td><td>они говорят</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">Глаголы на -ER (comer - есть)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Форма</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>yo</td><td>com<strong>o</strong></td><td>я ем</td></tr>
+                <tr><td>tú</td><td>com<strong>es</strong></td><td>ты ешь</td></tr>
+                <tr><td>él/ella</td><td>com<strong>e</strong></td><td>он/она ест</td></tr>
+                <tr><td>nosotros</td><td>com<strong>emos</strong></td><td>мы едим</td></tr>
+                <tr><td>vosotros</td><td>com<strong>éis</strong></td><td>вы едите</td></tr>
+                <tr><td>ellos/ellas</td><td>com<strong>en</strong></td><td>они едят</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">Глаголы на -IR (vivir - жить)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Форма</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>yo</td><td>viv<strong>o</strong></td><td>я живу</td></tr>
+                <tr><td>tú</td><td>viv<strong>es</strong></td><td>ты живёшь</td></tr>
+                <tr><td>él/ella</td><td>viv<strong>e</strong></td><td>он/она живёт</td></tr>
+                <tr><td>nosotros</td><td>viv<strong>imos</strong></td><td>мы живём</td></tr>
+                <tr><td>vosotros</td><td>viv<strong>ís</strong></td><td>вы живёте</td></tr>
+                <tr><td>ellos/ellas</td><td>viv<strong>en</strong></td><td>они живут</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 6: Проспрягайте глагол trabajar (работать)</h3>
+            <div class="grammar__conjugation-table">
+              <div class="grammar__question">
+                <p>yo → <input type="text" class="grammar__input" data-answer="trabajo" placeholder="trabajo"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>tú → <input type="text" class="grammar__input" data-answer="trabajas" placeholder="trabajas"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>él/ella → <input type="text" class="grammar__input" data-answer="trabaja" placeholder="trabaja"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>nosotros → <input type="text" class="grammar__input" data-answer="trabajamos" placeholder="trabajamos"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>vosotros → <input type="text" class="grammar__input" data-answer="trabajáis" placeholder="trabajáis"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>ellos/ellas → <input type="text" class="grammar__input" data-answer="trabajan" placeholder="trabajan"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="6">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="6">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="irregulares" class="grammar__section">
+          <h2 class="grammar__section-title">7. Неправильные глаголы (Verbos irregulares)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">SER (быть - постоянное состояние)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td><strong>soy</strong></td><td>я есть</td></tr>
+                <tr><td>tú</td><td><strong>eres</strong></td><td>ты есть</td></tr>
+                <tr><td>él/ella</td><td><strong>es</strong></td><td>он/она есть</td></tr>
+                <tr><td>nosotros</td><td><strong>somos</strong></td><td>мы есть</td></tr>
+                <tr><td>vosotros</td><td><strong>sois</strong></td><td>вы есть</td></tr>
+                <tr><td>ellos/ellas</td><td><strong>son</strong></td><td>они есть</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">ESTAR (быть - временное состояние/местоположение)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td><strong>estoy</strong></td><td>я нахожусь</td></tr>
+                <tr><td>tú</td><td><strong>estás</strong></td><td>ты находишься</td></tr>
+                <tr><td>él/ella</td><td><strong>está</strong></td><td>он/она находится</td></tr>
+                <tr><td>nosotros</td><td><strong>estamos</strong></td><td>мы находимся</td></tr>
+                <tr><td>vosotros</td><td><strong>estáis</strong></td><td>вы находитесь</td></tr>
+                <tr><td>ellos/ellas</td><td><strong>están</strong></td><td>они находятся</td></tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__note">
+              <p><strong>SER vs ESTAR:</strong></p>
+              <ul>
+                <li><strong>SER:</strong> профессия, национальность, характеристики → <span class="grammar__spanish">Soy médico</span> (Я врач)</li>
+                <li><strong>ESTAR:</strong> местоположение, временное состояние → <span class="grammar__spanish">Estoy cansado</span> (Я устал)</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">TENER (иметь)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td><strong>tengo</strong></td><td>я имею</td></tr>
+                <tr><td>tú</td><td><strong>tienes</strong></td><td>ты имеешь</td></tr>
+                <tr><td>él/ella</td><td><strong>tiene</strong></td><td>он/она имеет</td></tr>
+                <tr><td>nosotros</td><td><strong>tenemos</strong></td><td>мы имеем</td></tr>
+                <tr><td>vosotros</td><td><strong>tenéis</strong></td><td>вы имеете</td></tr>
+                <tr><td>ellos/ellas</td><td><strong>tienen</strong></td><td>они имеют</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">IR (идти)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td><strong>voy</strong></td><td>я иду</td></tr>
+                <tr><td>tú</td><td><strong>vas</strong></td><td>ты идёшь</td></tr>
+                <tr><td>él/ella</td><td><strong>va</strong></td><td>он/она идёт</td></tr>
+                <tr><td>nosotros</td><td><strong>vamos</strong></td><td>мы идём</td></tr>
+                <tr><td>vosotros</td><td><strong>vais</strong></td><td>вы идёте</td></tr>
+                <tr><td>ellos/ellas</td><td><strong>van</strong></td><td>они идут</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 7: Выберите правильную форму глагола</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. Yo ___ estudiante (Я студент - SER)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q14" value="soy"> soy</label>
+                  <label><input type="radio" name="q14" value="estoy"> estoy</label>
+                  <label><input type="radio" name="q14" value="eres"> eres</label>
+                </div>
+                <div class="grammar__feedback" data-answer="soy"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. Tú ___ en casa (Ты дома - ESTAR)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q15" value="eres"> eres</label>
+                  <label><input type="radio" name="q15" value="estás"> estás</label>
+                  <label><input type="radio" name="q15" value="está"> está</label>
+                </div>
+                <div class="grammar__feedback" data-answer="estás"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. Nosotros ___ un coche (У нас есть машина - TENER)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q16" value="tengo"> tengo</label>
+                  <label><input type="radio" name="q16" value="tenemos"> tenemos</label>
+                  <label><input type="radio" name="q16" value="tienen"> tienen</label>
+                </div>
+                <div class="grammar__feedback" data-answer="tenemos"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. Ellos ___ al parque (Они идут в парк - IR)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q17" value="voy"> voy</label>
+                  <label><input type="radio" name="q17" value="vamos"> vamos</label>
+                  <label><input type="radio" name="q17" value="van"> van</label>
+                </div>
+                <div class="grammar__feedback" data-answer="van"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="7">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="7">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="preterito" class="grammar__section">
+          <h2 class="grammar__section-title">8. Прошедшее время (Pretérito Perfecto Simple)</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Используется для описания завершенных действий в прошлом.</p>
+            
+            <h3 class="grammar__subtitle">Глаголы на -AR (hablar)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td>habl<strong>é</strong></td><td>я говорил</td></tr>
+                <tr><td>tú</td><td>habl<strong>aste</strong></td><td>ты говорил</td></tr>
+                <tr><td>él/ella</td><td>habl<strong>ó</strong></td><td>он/она говорил</td></tr>
+                <tr><td>nosotros</td><td>habl<strong>amos</strong></td><td>мы говорили</td></tr>
+                <tr><td>vosotros</td><td>habl<strong>asteis</strong></td><td>вы говорили</td></tr>
+                <tr><td>ellos/ellas</td><td>habl<strong>aron</strong></td><td>они говорили</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">Глаголы на -ER/-IR (comer, vivir)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td>com<strong>í</strong> / viv<strong>í</strong></td><td>я ел / я жил</td></tr>
+                <tr><td>tú</td><td>com<strong>iste</strong> / viv<strong>iste</strong></td><td>ты ел / ты жил</td></tr>
+                <tr><td>él/ella</td><td>com<strong>ió</strong> / viv<strong>ió</strong></td><td>он/она ел / жил</td></tr>
+                <tr><td>nosotros</td><td>com<strong>imos</strong> / viv<strong>imos</strong></td><td>мы ели / жили</td></tr>
+                <tr><td>vosotros</td><td>com<strong>isteis</strong> / viv<strong>isteis</strong></td><td>вы ели / жили</td></tr>
+                <tr><td>ellos/ellas</td><td>com<strong>ieron</strong> / viv<strong>ieron</strong></td><td>они ели / жили</td></tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__warning">
+              <p><strong>⚠️ Неправильные формы:</strong></p>
+              <ul>
+                <li><strong>ser/ir:</strong> fui, fuiste, fue, fuimos, fuisteis, fueron</li>
+                <li><strong>hacer:</strong> hice, hiciste, hizo, hicimos, hicisteis, hicieron</li>
+                <li><strong>tener:</strong> tuve, tuviste, tuvo, tuvimos, tuvisteis, tuvieron</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 8: Преобразуйте в прошедшее время</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. Yo hablo → Yo <input type="text" class="grammar__input" data-answer="hablé" placeholder="hablé"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. Tú comes → Tú <input type="text" class="grammar__input" data-answer="comiste" placeholder="comiste"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. Él vive → Él <input type="text" class="grammar__input" data-answer="vivió" placeholder="vivió"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>4. Nosotros trabajamos → Nosotros <input type="text" class="grammar__input" data-answer="trabajamos" placeholder="trabajamos"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="8">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="8">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="imperfecto" class="grammar__section">
+          <h2 class="grammar__section-title">9. Прошедшее незавершенное (Pretérito Imperfecto)</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Используется для описания повторяющихся действий в прошлом или фоновых событий.</p>
+            
+            <h3 class="grammar__subtitle">Глаголы на -AR (hablar)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td>habl<strong>aba</strong></td><td>я говорил (обычно)</td></tr>
+                <tr><td>tú</td><td>habl<strong>abas</strong></td><td>ты говорил</td></tr>
+                <tr><td>él/ella</td><td>habl<strong>aba</strong></td><td>он/она говорил</td></tr>
+                <tr><td>nosotros</td><td>habl<strong>ábamos</strong></td><td>мы говорили</td></tr>
+                <tr><td>vosotros</td><td>habl<strong>abais</strong></td><td>вы говорили</td></tr>
+                <tr><td>ellos/ellas</td><td>habl<strong>aban</strong></td><td>они говорили</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">Глаголы на -ER/-IR (comer, vivir)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td>com<strong>ía</strong> / viv<strong>ía</strong></td><td>я ел / жил</td></tr>
+                <tr><td>tú</td><td>com<strong>ías</strong> / viv<strong>ías</strong></td><td>ты ел / жил</td></tr>
+                <tr><td>él/ella</td><td>com<strong>ía</strong> / viv<strong>ía</strong></td><td>он/она ел / жил</td></tr>
+                <tr><td>nosotros</td><td>com<strong>íamos</strong> / viv<strong>íamos</strong></td><td>мы ели / жили</td></tr>
+                <tr><td>vosotros</td><td>com<strong>íais</strong> / viv<strong>íais</strong></td><td>вы ели / жили</td></tr>
+                <tr><td>ellos/ellas</td><td>com<strong>ían</strong> / viv<strong>ían</strong></td><td>они ели / жили</td></tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__note">
+              <p><strong>Когда использовать:</strong></p>
+              <ul>
+                <li><strong>Imperfecto:</strong> Cuando era niño, jugaba al fútbol (Когда я был ребенком, я играл в футбол)</li>
+                <li><strong>Pretérito:</strong> Ayer jugué al fútbol (Вчера я играл в футбол)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 9: Выберите правильное время</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. Cada día yo ___ al parque (Каждый день я ходил в парк)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q18" value="fui"> fui (Pretérito)</label>
+                  <label><input type="radio" name="q18" value="iba"> iba (Imperfecto)</label>
+                </div>
+                <div class="grammar__feedback" data-answer="iba"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. Ayer ___ a mi amigo (Вчера я увидел друга)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q19" value="vi"> vi (Pretérito)</label>
+                  <label><input type="radio" name="q19" value="veía"> veía (Imperfecto)</label>
+                </div>
+                <div class="grammar__feedback" data-answer="vi"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="9">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="9">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="futuro" class="grammar__section">
+          <h2 class="grammar__section-title">10. Будущее время (Futuro Simple)</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Образуется добавлением окончаний к инфинитиву глагола.</p>
+            
+            <h3 class="grammar__subtitle">Правильные глаголы (hablar, comer, vivir)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Окончание</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>yo</td><td>-é</td><td>hablar<strong>é</strong>, comer<strong>é</strong>, vivir<strong>é</strong></td></tr>
+                <tr><td>tú</td><td>-ás</td><td>hablar<strong>ás</strong>, comer<strong>ás</strong>, vivir<strong>ás</strong></td></tr>
+                <tr><td>él/ella</td><td>-á</td><td>hablar<strong>á</strong>, comer<strong>á</strong>, vivir<strong>á</strong></td></tr>
+                <tr><td>nosotros</td><td>-emos</td><td>hablar<strong>emos</strong>, comer<strong>emos</strong>, vivir<strong>emos</strong></td></tr>
+                <tr><td>vosotros</td><td>-éis</td><td>hablar<strong>éis</strong>, comer<strong>éis</strong>, vivir<strong>éis</strong></td></tr>
+                <tr><td>ellos/ellas</td><td>-án</td><td>hablar<strong>án</strong>, comer<strong>án</strong>, vivir<strong>án</strong></td></tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__warning">
+              <p><strong>⚠️ Неправильные основы:</strong></p>
+              <ul>
+                <li><strong>tener:</strong> tendré, tendrás, tendrá...</li>
+                <li><strong>hacer:</strong> haré, harás, hará...</li>
+                <li><strong>decir:</strong> diré, dirás, dirá...</li>
+                <li><strong>poder:</strong> podré, podrás, podrá...</li>
+                <li><strong>saber:</strong> sabré, sabrás, sabrá...</li>
+              </ul>
+            </div>
+
+            <div class="grammar__examples">
+              <p><strong>Примеры:</strong></p>
+              <ul>
+                <li><span class="grammar__spanish">Mañana hablaré con él</span> - Завтра я поговорю с ним</li>
+                <li><span class="grammar__spanish">El año que viene viviremos en España</span> - В следующем году мы будем жить в Испании</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 10: Образуйте будущее время</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. Yo (trabajar) → <input type="text" class="grammar__input" data-answer="trabajaré" placeholder="trabajaré"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. Tú (comer) → <input type="text" class="grammar__input" data-answer="comerás" placeholder="comerás"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. Nosotros (vivir) → <input type="text" class="grammar__input" data-answer="viviremos" placeholder="viviremos"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>4. Ellos (tener) → <input type="text" class="grammar__input" data-answer="tendrán" placeholder="tendrán"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="10">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="10">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="orden" class="grammar__section">
+          <h2 class="grammar__section-title">11. Порядок слов (Orden de palabras)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Базовый порядок: Подлежащее + Глагол + Дополнение</h3>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__spanish">Yo como manzanas</span> - Я ем яблоки</li>
+                <li><span class="grammar__spanish">María estudia español</span> - Мария изучает испанский</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Позиция прилагательных</h3>
+            <p class="grammar__text">Обычно прилагательные идут <strong>после</strong> существительного:</p>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__spanish">un coche rojo</span> - красная машина</li>
+                <li><span class="grammar__spanish">una casa grande</span> - большой дом</li>
+              </ul>
+            </div>
+
+            <div class="grammar__note">
+              <p><strong>💡 Исключения:</strong> Некоторые прилагательные идут перед существительным:</p>
+              <ul>
+                <li><span class="grammar__spanish">un buen libro</span> - хорошая книга</li>
+                <li><span class="grammar__spanish">una gran ciudad</span> - большой город</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Позиция наречий</h3>
+            <p class="grammar__text">Наречия обычно идут после глагола:</p>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__spanish">Hablo español bien</span> - Я хорошо говорю по-испански</li>
+                <li><span class="grammar__spanish">Trabajo mucho</span> - Я много работаю</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 11: Расставьте слова в правильном порядке</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. (español / hablo / yo) → <input type="text" class="grammar__input" data-answer="yo hablo español" placeholder="Введите предложение"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. (roja / una / casa) → <input type="text" class="grammar__input" data-answer="una casa roja" placeholder="Введите фразу"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. (bien / cocina / María) → <input type="text" class="grammar__input" data-answer="maría cocina bien" placeholder="Введите предложение"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="11">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="11">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="negacion" class="grammar__section">
+          <h2 class="grammar__section-title">12. Отрицание (Negación)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Простое отрицание с NO</h3>
+            <p class="grammar__text">NO ставится перед глаголом:</p>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__spanish">No hablo inglés</span> - Я не говорю по-английски</li>
+                <li><span class="grammar__spanish">No tengo tiempo</span> - У меня нет времени</li>
+                <li><span class="grammar__spanish">No es verdad</span> - Это неправда</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Отрицательные слова</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Испанский</th>
+                  <th>Русский</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>nunca</strong></td>
+                  <td>никогда</td>
+                  <td><span class="grammar__spanish">Nunca como carne</span> - Я никогда не ем мясо</td>
+                </tr>
+                <tr>
+                  <td><strong>nada</strong></td>
+                  <td>ничего</td>
+                  <td><span class="grammar__spanish">No veo nada</span> - Я ничего не вижу</td>
+                </tr>
+                <tr>
+                  <td><strong>nadie</strong></td>
+                  <td>никто</td>
+                  <td><span class="grammar__spanish">No hay nadie</span> - Никого нет</td>
+                </tr>
+                <tr>
+                  <td><strong>ninguno/a</strong></td>
+                  <td>никакой</td>
+                  <td><span class="grammar__spanish">No tengo ningún problema</span> - У меня нет никаких проблем</td>
+                </tr>
+                <tr>
+                  <td><strong>tampoco</strong></td>
+                  <td>тоже не</td>
+                  <td><span class="grammar__spanish">Yo tampoco</span> - Я тоже нет</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__warning">
+              <p><strong>⚠️ Двойное отрицание:</strong> В испанском языке двойное отрицание усиливает отрицание!</p>
+              <ul>
+                <li><span class="grammar__spanish">No veo nada</span> - Я ничего не вижу (буквально: "не вижу ничего")</li>
+                <li><span class="grammar__spanish">No viene nunca</span> - Он никогда не приходит</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 12: Преобразуйте в отрицательные предложения</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. Hablo español → <input type="text" class="grammar__input" data-answer="no hablo español" placeholder="Введите отрицание"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. Tengo algo (У меня есть что-то) → <input type="text" class="grammar__input" data-answer="no tengo nada" placeholder="Введите отрицание"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. Siempre como aquí (Я всегда ем здесь) → <input type="text" class="grammar__input" data-answer="nunca como aquí" placeholder="Введите отрицание"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="12">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="12">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="preguntas" class="grammar__section">
+          <h2 class="grammar__section-title">13. Вопросительные предложения (Preguntas)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Вопросительные слова</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Испанский</th>
+                  <th>Русский</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>¿Qué?</strong></td>
+                  <td>Что?</td>
+                  <td><span class="grammar__spanish">¿Qué haces?</span> - Что ты делаешь?</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Quién?</strong></td>
+                  <td>Кто?</td>
+                  <td><span class="grammar__spanish">¿Quién es?</span> - Кто это?</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Dónde?</strong></td>
+                  <td>Где?</td>
+                  <td><span class="grammar__spanish">¿Dónde vives?</span> - Где ты живёшь?</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Cuándo?</strong></td>
+                  <td>Когда?</td>
+                  <td><span class="grammar__spanish">¿Cuándo llegas?</span> - Когда ты приезжаешь?</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Cómo?</strong></td>
+                  <td>Как?</td>
+                  <td><span class="grammar__spanish">¿Cómo estás?</span> - Как дела?</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Por qué?</strong></td>
+                  <td>Почему?</td>
+                  <td><span class="grammar__spanish">¿Por qué estudias español?</span> - Почему ты учишь испанский?</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Cuánto/a?</strong></td>
+                  <td>Сколько?</td>
+                  <td><span class="grammar__spanish">¿Cuánto cuesta?</span> - Сколько стоит?</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Cuál?</strong></td>
+                  <td>Какой? Который?</td>
+                  <td><span class="grammar__spanish">¿Cuál prefieres?</span> - Какой ты предпочитаешь?</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__note">
+              <p><strong>💡 Важно:</strong> В испанском вопросы обрамляются двумя знаками: ¿ в начале и ? в конце.</p>
+            </div>
+
+            <h3 class="grammar__subtitle">Общие вопросы (да/нет)</h3>
+            <p class="grammar__text">Для вопросов да/нет просто меняем интонацию или порядок слов:</p>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__spanish">¿Hablas español?</span> - Ты говоришь по-испански?</li>
+                <li><span class="grammar__spanish">¿Tienes tiempo?</span> - У тебя есть время?</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 13: Выберите правильное вопросительное слово</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. ___ te llamas? (Как тебя зовут?)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q20" value="¿Qué?"> ¿Qué?</label>
+                  <label><input type="radio" name="q20" value="¿Cómo?"> ¿Cómo?</label>
+                  <label><input type="radio" name="q20" value="¿Dónde?"> ¿Dónde?</label>
+                </div>
+                <div class="grammar__feedback" data-answer="¿Cómo?"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. ___ vives? (Где ты живёшь?)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q21" value="¿Cuándo?"> ¿Cuándo?</label>
+                  <label><input type="radio" name="q21" value="¿Dónde?"> ¿Dónde?</label>
+                  <label><input type="radio" name="q21" value="¿Quién?"> ¿Quién?</label>
+                </div>
+                <div class="grammar__feedback" data-answer="¿Dónde?"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. ___ estudias español? (Почему ты учишь испанский?)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q22" value="¿Por qué?"> ¿Por qué?</label>
+                  <label><input type="radio" name="q22" value="¿Qué?"> ¿Qué?</label>
+                  <label><input type="radio" name="q22" value="¿Cómo?"> ¿Cómo?</label>
+                </div>
+                <div class="grammar__feedback" data-answer="¿Por qué?"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="13">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="13">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="preposiciones" class="grammar__section">
+          <h2 class="grammar__section-title">14. Предлоги (Preposiciones)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Основные предлоги</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Предлог</th>
+                  <th>Значение</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>en</strong></td>
+                  <td>в, на</td>
+                  <td><span class="grammar__spanish">Vivo en Madrid</span> - Я живу в Мадриде</td>
+                </tr>
+                <tr>
+                  <td><strong>de</strong></td>
+                  <td>из, от, о</td>
+                  <td><span class="grammar__spanish">Soy de Rusia</span> - Я из России</td>
+                </tr>
+                <tr>
+                  <td><strong>a</strong></td>
+                  <td>в, к, на</td>
+                  <td><span class="grammar__spanish">Voy a casa</span> - Я иду домой</td>
+                </tr>
+                <tr>
+                  <td><strong>con</strong></td>
+                  <td>с</td>
+                  <td><span class="grammar__spanish">Voy con mi amigo</span> - Я иду с другом</td>
+                </tr>
+                <tr>
+                  <td><strong>sin</strong></td>
+                  <td>без</td>
+                  <td><span class="grammar__spanish">Café sin azúcar</span> - Кофе без сахара</td>
+                </tr>
+                <tr>
+                  <td><strong>sobre</strong></td>
+                  <td>на, о</td>
+                  <td><span class="grammar__spanish">El libro está sobre la mesa</span> - Книга на столе</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">PARA vs POR</h3>
+            <div class="grammar__rule">
+              <p><strong>PARA (для, чтобы):</strong></p>
+              <ul>
+                <li>Цель: <span class="grammar__spanish">Estudio para aprender</span> - Я учусь, чтобы выучить</li>
+                <li>Назначение: <span class="grammar__spanish">Es para ti</span> - Это для тебя</li>
+                <li>Направление: <span class="grammar__spanish">Voy para Madrid</span> - Я еду в Мадрид</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>POR (из-за, по, через):</strong></p>
+              <ul>
+                <li>Причина: <span class="grammar__spanish">Por eso</span> - Поэтому</li>
+                <li>Через: <span class="grammar__spanish">Paso por el parque</span> - Я прохожу через парк</li>
+                <li>Время: <span class="grammar__spanish">Por la mañana</span> - Утром</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 14: Выберите правильный предлог</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. Vivo ___ Barcelona (Я живу в Барселоне)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q23" value="en"> en</label>
+                  <label><input type="radio" name="q23" value="a"> a</label>
+                  <label><input type="radio" name="q23" value="de"> de</label>
+                </div>
+                <div class="grammar__feedback" data-answer="en"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. Voy ___ casa (Я иду домой)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q24" value="en"> en</label>
+                  <label><input type="radio" name="q24" value="a"> a</label>
+                  <label><input type="radio" name="q24" value="de"> de</label>
+                </div>
+                <div class="grammar__feedback" data-answer="a"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. Es ___ ti (Это для тебя)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q25" value="para"> para</label>
+                  <label><input type="radio" name="q25" value="por"> por</label>
+                </div>
+                <div class="grammar__feedback" data-answer="para"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. ___ la mañana (Утром)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q26" value="para"> para</label>
+                  <label><input type="radio" name="q26" value="por"> por</label>
+                </div>
+                <div class="grammar__feedback" data-answer="por"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="14">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="14">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="lifehacks" class="grammar__section">
+          <h2 class="grammar__section-title">15. Лайфхаки - Похожие слова 🎯</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Многие испанские слова похожи на английские! Зная закономерности, вы можете угадать тысячи слов.</p>
+            
+            <h3 class="grammar__subtitle">Закономерность 1: -tion → -ción</h3>
+            <div class="grammar__lifehack-grid">
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">nation</span> → <span class="grammar__spanish">nación</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">station</span> → <span class="grammar__spanish">estación</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">information</span> → <span class="grammar__spanish">información</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">education</span> → <span class="grammar__spanish">educación</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">communication</span> → <span class="grammar__spanish">comunicación</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">celebration</span> → <span class="grammar__spanish">celebración</span>
+              </div>
+            </div>
+
+            <h3 class="grammar__subtitle">Закономерность 2: -ty → -dad</h3>
+            <div class="grammar__lifehack-grid">
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">university</span> → <span class="grammar__spanish">universidad</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">city</span> → <span class="grammar__spanish">ciudad</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">liberty</span> → <span class="grammar__spanish">libertad</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">quality</span> → <span class="grammar__spanish">calidad</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">reality</span> → <span class="grammar__spanish">realidad</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">community</span> → <span class="grammar__spanish">comunidad</span>
+              </div>
+            </div>
+
+            <h3 class="grammar__subtitle">Закономерность 3: -ous → -oso</h3>
+            <div class="grammar__lifehack-grid">
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">famous</span> → <span class="grammar__spanish">famoso</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">nervous</span> → <span class="grammar__spanish">nervioso</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">curious</span> → <span class="grammar__spanish">curioso</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">generous</span> → <span class="grammar__spanish">generoso</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">delicious</span> → <span class="grammar__spanish">delicioso</span>
+              </div>
+            </div>
+
+            <h3 class="grammar__subtitle">Закономерность 4: -ly → -mente</h3>
+            <div class="grammar__lifehack-grid">
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">rapidly</span> → <span class="grammar__spanish">rápidamente</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">normally</span> → <span class="grammar__spanish">normalmente</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">exactly</span> → <span class="grammar__spanish">exactamente</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">completely</span> → <span class="grammar__spanish">completamente</span>
+              </div>
+            </div>
+
+            <h3 class="grammar__subtitle">Закономерность 5: -ence/-ance → -encia/-ancia</h3>
+            <div class="grammar__lifehack-grid">
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">difference</span> → <span class="grammar__spanish">diferencia</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">importance</span> → <span class="grammar__spanish">importancia</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">experience</span> → <span class="grammar__spanish">experiencia</span>
+              </div>
+              <div class="grammar__lifehack-item">
+                <span class="grammar__english">distance</span> → <span class="grammar__spanish">distancia</span>
+              </div>
+            </div>
+
+            <div class="grammar__warning">
+              <p><strong>⚠️ Ложные друзья переводчика:</strong></p>
+              <ul>
+                <li><strong>embarazada</strong> ≠ embarrassed (смущённый), а = беременная!</li>
+                <li><strong>constipado</strong> ≠ constipated (запор), а = простуженный!</li>
+                <li><strong>éxito</strong> ≠ exit (выход), а = успех!</li>
+                <li><strong>actual</strong> ≠ actual (фактический), а = текущий, современный!</li>
+                <li><strong>largo</strong> ≠ large (большой), а = длинный!</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 15: Угадайте испанское слово</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. revolution → <input type="text" class="grammar__input" data-answer="revolución" placeholder="Введите испанское слово"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. personality → <input type="text" class="grammar__input" data-answer="personalidad" placeholder="Введите испанское слово"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. dangerous → <input type="text" class="grammar__input" data-answer="peligroso" placeholder="Введите испанское слово"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>4. perfectly → <input type="text" class="grammar__input" data-answer="perfectamente" placeholder="Введите испанское слово"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>5. intelligence → <input type="text" class="grammar__input" data-answer="inteligencia" placeholder="Введите испанское слово"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="15">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="15">Сбросить</button>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="learn-es-grammar.js"></script>
+</body>
+</html>

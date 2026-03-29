@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Грамматика английского языка</title>
+  <link rel="stylesheet" href="styles/history.css">
+  <link rel="stylesheet" href="styles/history-buttons.css">
+  <link rel="stylesheet" href="styles/learn-es.css">
+  <link rel="stylesheet" href="styles/learn-es-grammar.css">
+</head>
+<body>
+  <div class="history">
+    <div class="history__header">
+      <h1 class="history__title">Грамматика английского языка</h1>
+      <p class="learn-es__subtitle">Метод Эрика Гуннемарка - Основы грамматики с интерактивными упражнениями</p>
+      <div class="learn-es__controls">
+        <button class="learn-es__back-btn" id="backToWordsBtn">← Назад к словам</button>
+        <!-- <button class="learn-es__verb-btn" id="verbConjugationBtn">Спряжение глаголов →</button> -->
+      </div>
+      
+      <div class="grammar__progress">
+        <span class="grammar__progress-label">Прогресс упражнений:</span>
+        <div class="grammar__progress-bar">
+          <div class="grammar__progress-fill" id="progressFill"></div>
+        </div>
+        <span class="grammar__progress-text" id="progressText">0/0</span>
+      </div>
+    </div>
+
+    <div class="grammar__container">
+      <aside class="grammar__toc">
+        <h3 class="grammar__toc-title">Содержание</h3>
+        <nav class="grammar__toc-nav">
+          <a href="#articles" class="grammar__toc-link">1. Артикли</a>
+          <a href="#nouns" class="grammar__toc-link">2. Существительные</a>
+          <a href="#plural" class="grammar__toc-link">3. Множественное число</a>
+          <a href="#pronouns" class="grammar__toc-link">4. Личные местоимения</a>
+          <a href="#possessive" class="grammar__toc-link">5. Притяжательные местоимения</a>
+          <a href="#present-simple" class="grammar__toc-link">6. Present Simple</a>
+          <a href="#irregular-verbs" class="grammar__toc-link">7. Неправильные глаголы</a>
+          <a href="#past-simple" class="grammar__toc-link">8. Past Simple</a>
+          <a href="#present-continuous" class="grammar__toc-link">9. Present Continuous</a>
+          <a href="#future-simple" class="grammar__toc-link">10. Future Simple</a>
+          <a href="#word-order" class="grammar__toc-link">11. Порядок слов</a>
+          <a href="#negation" class="grammar__toc-link">12. Отрицание</a>
+          <a href="#questions" class="grammar__toc-link">13. Вопросы</a>
+          <a href="#prepositions" class="grammar__toc-link">14. Предлоги</a>
+          <a href="#tips" class="grammar__toc-link">15. Советы</a>
+        </nav>
+      </aside>
+
+      <main class="grammar__content">
+        
+        <section id="articles" class="grammar__section">
+          <h2 class="grammar__section-title">1. Артикли (Articles)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Определенный артикль (Definite Article)</h3>
+            <p class="grammar__text">В английском языке есть только один определенный артикль - the:</p>
+            
+            <div class="grammar__examples">
+              <p><strong>Примеры:</strong></p>
+              <ul>
+                <li><span class="grammar__english">the book</span> - книга (конкретная)</li>
+                <li><span class="grammar__english">the house</span> - дом (конкретный)</li>
+                <li><span class="grammar__english">the books</span> - книги (конкретные)</li>
+                <li><span class="grammar__english">the houses</span> - дома (конкретные)</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Неопределенные артикли (Indefinite Articles)</h3>
+            <p class="grammar__text">В английском языке два неопределенных артикля:</p>
+            
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Артикль</th>
+                  <th>Использование</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>a</strong></td>
+                  <td>Перед согласными звуками</td>
+                  <td><span class="grammar__english">a book</span> (книга)</td>
+                </tr>
+                <tr>
+                  <td><strong>an</strong></td>
+                  <td>Перед гласными звуками</td>
+                  <td><span class="grammar__english">an apple</span> (яблоко)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__examples">
+              <p><strong>Примеры:</strong></p>
+              <ul>
+                <li><span class="grammar__english">a dog</span> - собака</li>
+                <li><span class="grammar__english">an apple</span> - яблоко</li>
+                <li><span class="grammar__english">a university</span> - университет (ю - согласный звук)</li>
+                <li><span class="grammar__english">an hour</span> - час (h не произносится)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 1: Выберите правильный артикль</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. ___ cat (кот)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q1" value="a"> a</label>
+                  <label><input type="radio" name="q1" value="an"> an</label>
+                  <label><input type="radio" name="q1" value="the"> the</label>
+                </div>
+                <div class="grammar__feedback" data-answer="a"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. ___ apple (яблоко)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q2" value="a"> a</label>
+                  <label><input type="radio" name="q2" value="an"> an</label>
+                  <label><input type="radio" name="q2" value="the"> the</label>
+                </div>
+                <div class="grammar__feedback" data-answer="an"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. ___ books (книги - конкретные)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q3" value="a"> a</label>
+                  <label><input type="radio" name="q3" value="an"> an</label>
+                  <label><input type="radio" name="q3" value="the"> the</label>
+                </div>
+                <div class="grammar__feedback" data-answer="the"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. ___ house (дом - конкретный)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q4" value="a"> a</label>
+                  <label><input type="radio" name="q4" value="an"> an</label>
+                  <label><input type="radio" name="q4" value="the"> the</label>
+                </div>
+                <div class="grammar__feedback" data-answer="the"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. ___ car (машина)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q5" value="a"> a</label>
+                  <label><input type="radio" name="q5" value="an"> an</label>
+                  <label><input type="radio" name="q5" value="the"> the</label>
+                </div>
+                <div class="grammar__feedback" data-answer="a"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="1">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="1">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="nouns" class="grammar__section">
+          <h2 class="grammar__section-title">2. Существительные (Nouns)</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">В английском языке существительные не имеют рода, как в русском. Они делятся на исчисляемые и неисчисляемые:</p>
+            
+            <h3 class="grammar__subtitle">Исчисляемые существительные (Countable Nouns)</h3>
+            <div class="grammar__rule">
+              <p><strong>Можно посчитать:</strong></p>
+              <ul>
+                <li><span class="grammar__english">one book, two books</span> - одна книга, две книги</li>
+                <li><span class="grammar__english">a dog, three dogs</span> - собака, три собаки</li>
+                <li><span class="grammar__english">an apple, many apples</span> - яблоко, много яблок</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Неисчисляемые существительные (Uncountable Nouns)</h3>
+            <div class="grammar__rule">
+              <p><strong>Нельзя посчитать (используются с some/any):</strong></p>
+              <ul>
+                <li><strong>Вещества:</strong> <span class="grammar__english">water, milk, bread</span></li>
+                <li><strong>Абстрактные понятия:</strong> <span class="grammar__english">love, happiness, information</span></li>
+                <li><strong>Массовые предметы:</strong> <span class="grammar__english">money, furniture, traffic</span></li>
+              </ul>
+            </div>
+
+            <div class="grammar__examples">
+              <p><strong>Примеры:</strong></p>
+              <ul>
+                <li><span class="grammar__english">some water</span> - немного воды</li>
+                <li><span class="grammar__english">some information</span> - некоторая информация</li>
+                <li><span class="grammar__english">much money</span> - много денег</li>
+                <li><span class="grammar__english">little time</span> - мало времени</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 2: Исчисляемые или неисчисляемые?</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. water (вода)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q6" value="countable"> Исчисляемое</label>
+                  <label><input type="radio" name="q6" value="uncountable"> Неисчисляемое</label>
+                </div>
+                <div class="grammar__feedback" data-answer="uncountable"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. book (книга)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q7" value="countable"> Исчисляемое</label>
+                  <label><input type="radio" name="q7" value="uncountable"> Неисчисляемое</label>
+                </div>
+                <div class="grammar__feedback" data-answer="countable"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. information (информация)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q8" value="countable"> Исчисляемое</label>
+                  <label><input type="radio" name="q8" value="uncountable"> Неисчисляемое</label>
+                </div>
+                <div class="grammar__feedback" data-answer="uncountable"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. car (машина)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q9" value="countable"> Исчисляемое</label>
+                  <label><input type="radio" name="q9" value="uncountable"> Неисчисляемое</label>
+                </div>
+                <div class="grammar__feedback" data-answer="countable"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. happiness (счастье)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q10" value="countable"> Исчисляемое</label>
+                  <label><input type="radio" name="q10" value="uncountable"> Неисчисляемое</label>
+                </div>
+                <div class="grammar__feedback" data-answer="uncountable"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="2">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="2">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="plural" class="grammar__section">
+          <h2 class="grammar__section-title">3. Множественное число (Plural)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Правила образования множественного числа</h3>
+            
+            <div class="grammar__rule">
+              <p><strong>1. Общее правило → добавляем -s</strong></p>
+              <ul>
+                <li><span class="grammar__english">book → books</span> (книга → книги)</li>
+                <li><span class="grammar__english">cat → cats</span> (кот → коты)</li>
+                <li><span class="grammar__english">pen → pens</span> (ручка → ручки)</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>2. Слова, заканчивающиеся на -s, -sh, -ch, -x, -z → добавляем -es</strong></p>
+              <ul>
+                <li><span class="grammar__english">bus → buses</span> (автобус → автобусы)</li>
+                <li><span class="grammar__english">watch → watches</span> (часы → часы)</li>
+                <li><span class="grammar__english">box → boxes</span> (коробка → коробки)</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>3. Слова, заканчивающиеся на согласную + y → меняем y на i и добавляем -es</strong></p>
+              <ul>
+                <li><span class="grammar__english">city → cities</span> (город → города)</li>
+                <li><span class="grammar__english">baby → babies</span> (ребенок → дети)</li>
+                <li><span class="grammar__english">country → countries</span> (страна → страны)</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>4. Слова, заканчивающиеся на f или fe → меняем на v и добавляем -es</strong></p>
+              <ul>
+                <li><span class="grammar__english">leaf → leaves</span> (лист → листья)</li>
+                <li><span class="grammar__english">wife → wives</span> (жена → жены)</li>
+                <li><span class="grammar__english">wolf → wolves</span> (волк → волки)</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>5. Неправильные множественные числа</strong></p>
+              <ul>
+                <li><span class="grammar__english">child → children</span> (ребенок → дети)</li>
+                <li><span class="grammar__english">man → men</span> (мужчина → мужчины)</li>
+                <li><span class="grammar__english">woman → women</span> (женщина → женщины)</li>
+                <li><span class="grammar__english">tooth → teeth</span> (зуб → зубы)</li>
+                <li><span class="grammar__english">foot → feet</span> (нога → ноги)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 3: Образуйте множественное число</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. dog → <input type="text" class="grammar__input" data-answer="dogs" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. box → <input type="text" class="grammar__input" data-answer="boxes" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. city → <input type="text" class="grammar__input" data-answer="cities" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. leaf → <input type="text" class="grammar__input" data-answer="leaves" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. child → <input type="text" class="grammar__input" data-answer="children" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>6. man → <input type="text" class="grammar__input" data-answer="men" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="3">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="3">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="pronouns" class="grammar__section">
+          <h2 class="grammar__section-title">4. Личные местоимения (Personal Pronouns)</h2>
+          
+          <div class="grammar__theory">
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Именительный падеж</th>
+                  <th>Объектный падеж</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1 лицо ед.ч.</strong></td>
+                  <td>I</td>
+                  <td>me</td>
+                  <td><span class="grammar__english">I like music</span> - Я люблю музыку</td>
+                </tr>
+                <tr>
+                  <td><strong>2 лицо ед.ч.</strong></td>
+                  <td>you</td>
+                  <td>you</td>
+                  <td><span class="grammar__english">You speak English</span> - Ты говоришь по-английски</td>
+                </tr>
+                <tr>
+                  <td><strong>3 лицо ед.ч. м.р.</strong></td>
+                  <td>he</td>
+                  <td>him</td>
+                  <td><span class="grammar__english">He is a doctor</span> - Он врач</td>
+                </tr>
+                <tr>
+                  <td><strong>3 лицо ед.ч. ж.р.</strong></td>
+                  <td>she</td>
+                  <td>her</td>
+                  <td><span class="grammar__english">She works here</span> - Она работает здесь</td>
+                </tr>
+                <tr>
+                  <td><strong>3 лицо ед.ч. ср.р.</strong></td>
+                  <td>it</td>
+                  <td>it</td>
+                  <td><span class="grammar__english">It is cold</span> - Холодно</td>
+                </tr>
+                <tr>
+                  <td><strong>1 лицо мн.ч.</strong></td>
+                  <td>we</td>
+                  <td>us</td>
+                  <td><span class="grammar__english">We study together</span> - Мы учимся вместе</td>
+                </tr>
+                <tr>
+                  <td><strong>2/3 лицо мн.ч.</strong></td>
+                  <td>they</td>
+                  <td>them</td>
+                  <td><span class="grammar__english">They are friends</span> - Они друзья</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__note">
+              <p><strong>💡 Примечание:</strong> В английском языке местоимение it используется для неодушевленных предметов и животных.</p>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 4: Выберите правильное местоимение</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. ___ is a student (Я студент)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q11" value="I"> I</label>
+                  <label><input type="radio" name="q11" value="you"> you</label>
+                  <label><input type="radio" name="q11" value="he"> he</label>
+                </div>
+                <div class="grammar__feedback" data-answer="I"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. ___ are teachers (Они учителя)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q12" value="we"> we</label>
+                  <label><input type="radio" name="q12" value="they"> they</label>
+                  <label><input type="radio" name="q12" value="you"> you</label>
+                </div>
+                <div class="grammar__feedback" data-answer="they"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. ___ is my friend (Она мой друг)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q13" value="he"> he</label>
+                  <label><input type="radio" name="q13" value="she"> she</label>
+                  <label><input type="radio" name="q13" value="it"> it</label>
+                </div>
+                <div class="grammar__feedback" data-answer="she"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. ___ is a book (Это книга)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q14" value="he"> he</label>
+                  <label><input type="radio" name="q14" value="she"> she</label>
+                  <label><input type="radio" name="q14" value="it"> it</label>
+                </div>
+                <div class="grammar__feedback" data-answer="it"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. ___ like coffee (Мы любим кофе)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q15" value="I"> I</label>
+                  <label><input type="radio" name="q15" value="we"> we</label>
+                  <label><input type="radio" name="q15" value="they"> they</label>
+                </div>
+                <div class="grammar__feedback" data-answer="we"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="4">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="4">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="possessive" class="grammar__section">
+          <h2 class="grammar__section-title">5. Притяжательные местоимения (Possessive Pronouns)</h2>
+          
+          <div class="grammar__theory">
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Притяжательный прилагательное</th>
+                  <th>Притяжательное местоимение</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>I</td>
+                  <td>my (мой/моя)</td>
+                  <td>mine (мой/моя/моё)</td>
+                  <td><span class="grammar__english">This is my book / The book is mine</span></td>
+                </tr>
+                <tr>
+                  <td>you</td>
+                  <td>your (твой/твоя)</td>
+                  <td>yours (твой/твоя/твоё)</td>
+                  <td><span class="grammar__english">This is your pen / The pen is yours</span></td>
+                </tr>
+                <tr>
+                  <td>he</td>
+                  <td>his (его)</td>
+                  <td>his (его)</td>
+                  <td><span class="grammar__english">This is his car / The car is his</span></td>
+                </tr>
+                <tr>
+                  <td>she</td>
+                  <td>her (её)</td>
+                  <td>hers (её)</td>
+                  <td><span class="grammar__english">This is her dress / The dress is hers</span></td>
+                </tr>
+                <tr>
+                  <td>it</td>
+                  <td>its (его/её)</td>
+                  <td>-</td>
+                  <td><span class="grammar__english">The dog and its bone</span></td>
+                </tr>
+                <tr>
+                  <td>we</td>
+                  <td>our (наш/наша)</td>
+                  <td>ours (наш/наша/наше)</td>
+                  <td><span class="grammar__english">This is our house / The house is ours</span></td>
+                </tr>
+                <tr>
+                  <td>they</td>
+                  <td>their (их)</td>
+                  <td>theirs (их)</td>
+                  <td><span class="grammar__english">This is their money / The money is theirs</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__examples">
+              <p><strong>Примеры:</strong></p>
+              <ul>
+                <li><span class="grammar__english">my phone</span> - мой телефон</li>
+                <li><span class="grammar__english">your keys</span> - твои ключи</li>
+                <li><span class="grammar__english">his wallet</span> - его кошелек</li>
+                <li><span class="grammar__english">her bag</span> - её сумка</li>
+              </ul>
+            </div>
+
+            <div class="grammar__note">
+              <p><strong>💡 Разница:</strong> Притяжательные прилагательные (my, your) используются перед существительным, а притяжательные местоимения (mine, yours) используются самостоятельно.</p>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 5: Заполните пропуски</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. ___ mother is a doctor (моя мама - врач) → <input type="text" class="grammar__input" data-answer="my" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. This book is ___ (эта книга - моя) → <input type="text" class="grammar__input" data-answer="mine" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. ___ car is new (его машина новая) → <input type="text" class="grammar__input" data-answer="his" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. The house is ___ (дом - наш) → <input type="text" class="grammar__input" data-answer="ours" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. ___ children are at school (их дети в школе) → <input type="text" class="grammar__input" data-answer="their" placeholder="Введите ответ"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="5">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="5">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="present-simple" class="grammar__section">
+          <h2 class="grammar__section-title">6. Present Simple</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Present Simple используется для регулярных действий, фактов и привычек:</p>
+            
+            <h3 class="grammar__subtitle">Образование времени</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Форма</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>I</td><td>work</td><td>я работаю</td></tr>
+                <tr><td>You</td><td>work</td><td>ты работаешь</td></tr>
+                <tr><td>He/She/It</td><td>work<strong>s</strong></td><td>он/она/оно работает</td></tr>
+                <tr><td>We</td><td>work</td><td>мы работаем</td></tr>
+                <tr><td>You (pl.)</td><td>work</td><td>вы работаете</td></tr>
+                <tr><td>They</td><td>work</td><td>они работают</td></tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__rule">
+              <p><strong>Правило третьего лица единственного числа (he/she/it):</strong></p>
+              <ul>
+                <li>Обычно добавляем <strong>-s</strong>: <span class="grammar__english">work → works</span></li>
+                <li>Слова, заканчивающиеся на -s, -sh, -ch, -x, -z → добавляем <strong>-es</strong>: <span class="grammar__english">watch → watches</span></li>
+                <li>Слова, заканчивающиеся на согласную + y → меняем y на i и добавляем <strong>-es</strong>: <span class="grammar__english">study → studies</span></li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Вопросы и отрицания</h3>
+            <div class="grammar__rule">
+              <p><strong>Вопросы:</strong> Do/Does + подлежащее + глагол</p>
+              <ul>
+                <li><span class="grammar__english">Do you speak English?</span> - Ты говоришь по-английски?</li>
+                <li><span class="grammar__english">Does he work here?</span> - Он работает здесь?</li>
+                <li><span class="grammar__english">Do they like coffee?</span> - Они любят кофе?</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Отрицания:</strong> Подлежащее + don't/doesn't + глагол</p>
+              <ul>
+                <li><span class="grammar__english">I don't understand</span> - Я не понимаю</li>
+                <li><span class="grammar__english">She doesn't like tea</span> - Она не любит чай</li>
+                <li><span class="grammar__english">We don't have time</span> - У нас нет времени</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Сигнальные слова</h3>
+            <div class="grammar__examples">
+              <p><strong>Используется со словами:</strong></p>
+              <ul>
+                <li><span class="grammar__english">always, usually, often, sometimes, never</span></li>
+                <li><span class="grammar__english">every day/week/month</span></li>
+                <li><span class="grammar__english">in the morning/evening</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 6: Поставьте глагол в правильную форму</h3>
+            <div class="grammar__conjugation-table">
+              <div class="grammar__question">
+                <p>I (work) → <input type="text" class="grammar__input" data-answer="work" placeholder="work"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>She (study) → <input type="text" class="grammar__input" data-answer="studies" placeholder="studies"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>They (play) → <input type="text" class="grammar__input" data-answer="play" placeholder="play"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>He (watch) → <input type="text" class="grammar__input" data-answer="watches" placeholder="watches"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>We (live) → <input type="text" class="grammar__input" data-answer="live" placeholder="live"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>It (go) → <input type="text" class="grammar__input" data-answer="goes" placeholder="goes"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="6">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="6">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="irregular-verbs" class="grammar__section">
+          <h2 class="grammar__section-title">7. Неправильные глаголы (Irregular Verbs)</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">В английском языке есть много неправильных глаголов, которые образуют формы не по стандартным правилам. Вот самые важные из них:</p>
+            
+            <h3 class="grammar__subtitle">TO BE (быть)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Present Simple</th>
+                  <th>Past Simple</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>I</td><td><strong>am</strong></td><td><strong>was</strong></td><td>я есть/был</td></tr>
+                <tr><td>You</td><td><strong>are</strong></td><td><strong>were</strong></td><td>ты есть/был</td></tr>
+                <tr><td>He/She/It</td><td><strong>is</strong></td><td><strong>was</strong></td><td>он/она есть/был</td></tr>
+                <tr><td>We</td><td><strong>are</strong></td><td><strong>were</strong></td><td>мы есть/были</td></tr>
+                <tr><td>You (pl.)</td><td><strong>are</strong></td><td><strong>were</strong></td><td>вы есть/были</td></tr>
+                <tr><td>They</td><td><strong>are</strong></td><td><strong>were</strong></td><td>они есть/были</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">TO HAVE (иметь)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Present Simple</th>
+                  <th>Past Simple</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>I/You/We/They</td><td><strong>have</strong></td><td><strong>had</strong></td><td>имею/имел</td></tr>
+                <tr><td>He/She/It</td><td><strong>has</strong></td><td><strong>had</strong></td><td>имеет/имел</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">TO DO (делать)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Лицо</th>
+                  <th>Present Simple</th>
+                  <th>Past Simple</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>I/You/We/They</td><td><strong>do</strong></td><td><strong>did</strong></td><td>делаю/делал</td></tr>
+                <tr><td>He/She/It</td><td><strong>does</strong></td><td><strong>did</strong></td><td>делает/делал</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">TO GO (идти)</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Форма</th>
+                  <th>Глагол</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Present Simple</td><td><strong>go/goes</strong></td><td>иду/идет</td></tr>
+                <tr><td>Past Simple</td><td><strong>went</strong></td><td>шел</td></tr>
+                <tr><td>Past Participle</td><td><strong>gone</strong></td><td>ушедший</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">Другие важные неправильные глаголы</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Infinitive</th>
+                  <th>Past Simple</th>
+                  <th>Past Participle</th>
+                  <th>Перевод</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>see</td><td>saw</td><td>seen</td><td>видеть</td></tr>
+                <tr><td>eat</td><td>ate</td><td>eaten</td><td>есть</td></tr>
+                <tr><td>take</td><td>took</td><td>taken</td><td>брать</td></tr>
+                <tr><td>come</td><td>came</td><td>come</td><td>приходить</td></tr>
+                <tr><td>make</td><td>made</td><td>made</td><td>делать</td></tr>
+                <tr><td>get</td><td>got</td><td>got/gotten</td><td>получать</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 7: Выберите правильную форму глагола</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. I ___ a student (Я студент - TO BE)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q16" value="am"> am</label>
+                  <label><input type="radio" name="q16" value="is"> is</label>
+                  <label><input type="radio" name="q16" value="are"> are</label>
+                </div>
+                <div class="grammar__feedback" data-answer="am"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. She ___ at home yesterday (Она была дома вчера - TO BE)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q17" value="is"> is</label>
+                  <label><input type="radio" name="q17" value="was"> was</label>
+                  <label><input type="radio" name="q17" value="were"> were</label>
+                </div>
+                <div class="grammar__feedback" data-answer="was"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. They ___ a new car (У них новая машина - TO HAVE)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q18" value="have"> have</label>
+                  <label><input type="radio" name="q18" value="has"> has</label>
+                  <label><input type="radio" name="q18" value="had"> had</label>
+                </div>
+                <div class="grammar__feedback" data-answer="have"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. He ___ to school yesterday (Он пошел в школу вчера - TO GO)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q19" value="go"> go</label>
+                  <label><input type="radio" name="q19" value="goes"> goes</label>
+                  <label><input type="radio" name="q19" value="went"> went</label>
+                </div>
+                <div class="grammar__feedback" data-answer="went"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. We ___ dinner last night (Мы ужинали вчера вечером - TO EAT)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q20" value="eat"> eat</label>
+                  <label><input type="radio" name="q20" value="eats"> eats</label>
+                  <label><input type="radio" name="q20" value="ate"> ate</label>
+                </div>
+                <div class="grammar__feedback" data-answer="ate"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="7">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="7">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="past-simple" class="grammar__section">
+          <h2 class="grammar__section-title">8. Past Simple</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Past Simple используется для описания завершенных действий в прошлом:</p>
+            
+            <h3 class="grammar__subtitle">Образование времени</h3>
+            
+            <div class="grammar__rule">
+              <p><strong>Правильные глаголы:</strong> добавляем <strong>-ed</strong> к инфинитиву</p>
+              <ul>
+                <li><span class="grammar__english">work → worked</span> (работал)</li>
+                <li><span class="grammar__english">play → played</span> (играл)</li>
+                <li><span class="grammar__english">watch → watched</span> (смотрел)</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Правила правописания -ed:</strong></p>
+              <ul>
+                <li>Слова, заканчивающиеся на <strong>-e</strong> → добавляем <strong>-d</strong>: <span class="grammar__english">live → lived</span></li>
+                <li>Слова, заканчивающиеся на согласную + <strong>y</strong> → меняем y на i + <strong>-ed</strong>: <span class="grammar__english">study → studied</span></li>
+                <li>Краткие глаголы, заканчивающиеся на согласную-гласную-согласную → удваиваем согласную + <strong>-ed</strong>: <span class="grammar__english">stop → stopped</span></li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Вопросы и отрицания</h3>
+            <div class="grammar__rule">
+              <p><strong>Вопросы:</strong> Did + подлежащее + глагол в инфинитиве</p>
+              <ul>
+                <li><span class="grammar__english">Did you work yesterday?</span> - Ты работал вчера?</li>
+                <li><span class="grammar__english">Did she go to the cinema?</span> - Она ходила в кино?</li>
+                <li><span class="grammar__english">Did they like the movie?</span> - Им понравился фильм?</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Отрицания:</strong> Подлежащее + didn't + глагол в инфинитиве</p>
+              <ul>
+                <li><span class="grammar__english">I didn't understand</span> - Я не понял</li>
+                <li><span class="grammar__english">She didn't come</span> - Она не пришла</li>
+                <li><span class="grammar__english">We didn't have time</span> - У нас не было времени</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Сигнальные слова</h3>
+            <div class="grammar__examples">
+              <p><strong>Используется со словами:</strong></p>
+              <ul>
+                <li><span class="grammar__english">yesterday, last week/month/year</span></li>
+                <li><span class="grammar__english">ago (two days ago)</span></li>
+                <li><span class="grammar__english">in 1999, last Monday</span></li>
+              </ul>
+            </div>
+
+            <div class="grammar__warning">
+              <p><strong>⚠️ Важно:</strong> В вопросах и отрицаниях Past Simple всегда используется вспомогательный глагол did/didn't, а основной глагол остается в инфинитиве без -ed!</p>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 8: Преобразуйте в Past Simple</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. I work → I <input type="text" class="grammar__input" data-answer="worked" placeholder="worked"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. She plays → She <input type="text" class="grammar__input" data-answer="played" placeholder="played"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. He studies → He <input type="text" class="grammar__input" data-answer="studied" placeholder="studied"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>4. They stop → They <input type="text" class="grammar__input" data-answer="stopped" placeholder="stopped"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>5. We live → We <input type="text" class="grammar__input" data-answer="lived" placeholder="lived"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>6. You go → You <input type="text" class="grammar__input" data-answer="went" placeholder="went"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="8">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="8">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="present-continuous" class="grammar__section">
+          <h2 class="grammar__section-title">9. Present Continuous</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Present Continuous используется для действий, происходящих прямо сейчас или в текущий период:</p>
+            
+            <h3 class="grammar__subtitle">Образование времени</h3>
+            <div class="grammar__rule">
+              <p><strong>Формула:</strong> подлежащее + am/is/are + глагол + <strong>-ing</strong></p>
+              <ul>
+                <li><span class="grammar__english">I am working</span> - я работаю (сейчас)</li>
+                <li><span class="grammar__english">She is reading</span> - она читает (сейчас)</li>
+                <li><span class="grammar__english">They are playing</span> - они играют (сейчас)</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Правила образования -ing</h3>
+            <div class="grammar__rule">
+              <p><strong>Общее правило:</strong> добавляем <strong>-ing</strong></p>
+              <ul>
+                <li><span class="grammar__english">work → working</span></li>
+                <li><span class="grammar__english">play → playing</span></li>
+                <li><span class="grammar__english">read → reading</span></li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Слова, заканчивающиеся на -e:</strong> убираем -e и добавляем <strong>-ing</strong></p>
+              <ul>
+                <li><span class="grammar__english">make → making</span></li>
+                <li><span class="grammar__english">write → writing</span></li>
+                <li><span class="grammar__english">take → taking</span></li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Краткие глаголы с одной гласной:</strong> удваиваем согласную + <strong>-ing</strong></p>
+              <ul>
+                <li><span class="grammar__english">sit → sitting</span></li>
+                <li><span class="grammar__english">run → running</span></li>
+                <li><span class="grammar__english">get → getting</span></li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Глаголы, заканчивающиеся на -ie:</strong> меняем -ie на <strong>y + ing</strong></p>
+              <ul>
+                <li><span class="grammar__english">lie → lying</span></li>
+                <li><span class="grammar__english">die → dying</span></li>
+                <li><span class="grammar__english">tie → tying</span></li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Вопросы и отрицания</h3>
+            <div class="grammar__rule">
+              <p><strong>Вопросы:</strong> Am/Is/Are + подлежащее + глагол + -ing</p>
+              <ul>
+                <li><span class="grammar__english">Are you working now?</span> - Ты работаешь сейчас?</li>
+                <li><span class="grammar__english">Is she reading a book?</span> - Она читает книгу?</li>
+                <li><span class="grammar__english">Are they playing football?</span> - Они играют в футбол?</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Отрицания:</strong> Подлежащее + am/is/are + not + глагол + -ing</p>
+              <ul>
+                <li><span class="grammar__english">I am not working</span> - Я не работаю</li>
+                <li><span class="grammar__english">She isn't reading</span> - Она не читает</li>
+                <li><span class="grammar__english">They aren't playing</span> - Они не играют</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Сигнальные слова</h3>
+            <div class="grammar__examples">
+              <p><strong>Используется со словами:</strong></p>
+              <ul>
+                <li><span class="grammar__english">now, at the moment</span></li>
+                <li><span class="grammar__english">today, this week/month</span></li>
+                <li><span class="grammar__english">Look! Listen!</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 9: Поставьте глагол в Present Continuous</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. I (work) now → I <input type="text" class="grammar__input" data-answer="am working" placeholder="am working"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. She (read) a book → She <input type="text" class="grammar__input" data-answer="is reading" placeholder="is reading"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. They (play) football → They <input type="text" class="grammar__input" data-answer="are playing" placeholder="are playing"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>4. He (sit) here → He <input type="text" class="grammar__input" data-answer="is sitting" placeholder="is sitting"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>5. We (make) dinner → We <input type="text" class="grammar__input" data-answer="are making" placeholder="are making"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>6. You (run) → You <input type="text" class="grammar__input" data-answer="are running" placeholder="are running"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="9">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="9">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="imperfecto" class="grammar__section">
+          <h2 class="grammar__section-title">10. Прошедшее незавершенное (Pretérito Imperfecto)</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Используется для описания повторяющихся действий в прошлом или фоновых событий.</p>
+            
+            <h3 class="grammar__subtitle">Глаголы на -AR (hablar)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td>habl<strong>aba</strong></td><td>я говорил (обычно)</td></tr>
+                <tr><td>tú</td><td>habl<strong>abas</strong></td><td>ты говорил</td></tr>
+                <tr><td>él/ella</td><td>habl<strong>aba</strong></td><td>он/она говорил</td></tr>
+                <tr><td>nosotros</td><td>habl<strong>ábamos</strong></td><td>мы говорили</td></tr>
+                <tr><td>vosotros</td><td>habl<strong>abais</strong></td><td>вы говорили</td></tr>
+                <tr><td>ellos/ellas</td><td>habl<strong>aban</strong></td><td>они говорили</td></tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">Глаголы на -ER/-IR (comer, vivir)</h3>
+            <table class="grammar__table">
+              <tbody>
+                <tr><td>yo</td><td>com<strong>ía</strong> / viv<strong>ía</strong></td><td>я ел / жил</td></tr>
+                <tr><td>tú</td><td>com<strong>ías</strong> / viv<strong>ías</strong></td><td>ты ел / жил</td></tr>
+                <tr><td>él/ella</td><td>com<strong>ía</strong> / viv<strong>ía</strong></td><td>он/она ел / жил</td></tr>
+                <tr><td>nosotros</td><td>com<strong>íamos</strong> / viv<strong>íamos</strong></td><td>мы ели / жили</td></tr>
+                <tr><td>vosotros</td><td>com<strong>íais</strong> / viv<strong>íais</strong></td><td>вы ели / жили</td></tr>
+                <tr><td>ellos/ellas</td><td>com<strong>ían</strong> / viv<strong>ían</strong></td><td>они ели / жили</td></tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__note">
+              <p><strong>Когда использовать:</strong></p>
+              <ul>
+                <li><strong>Imperfecto:</strong> Cuando era niño, jugaba al fútbol (Когда я был ребенком, я играл в футбол)</li>
+                <li><strong>Pretérito:</strong> Ayer jugué al fútbol (Вчера я играл в футбол)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 10: Выберите правильное время</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. Cada día yo ___ al parque (Каждый день я ходил в парк)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q18" value="fui"> fui (Pretérito)</label>
+                  <label><input type="radio" name="q18" value="iba"> iba (Imperfecto)</label>
+                </div>
+                <div class="grammar__feedback" data-answer="iba"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. Ayer ___ a mi amigo (Вчера я увидел друга)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q19" value="vi"> vi (Pretérito)</label>
+                  <label><input type="radio" name="q19" value="veía"> veía (Imperfecto)</label>
+                </div>
+                <div class="grammar__feedback" data-answer="vi"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="10">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="10">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="future-simple" class="grammar__section">
+          <h2 class="grammar__section-title">10. Future Simple</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Future Simple используется для действий, которые произойдут в будущем:</p>
+            
+            <h3 class="grammar__subtitle">Образование времени</h3>
+            <div class="grammar__rule">
+              <p><strong>Формула:</strong> подлежащее + will + глагол в инфинитиве</p>
+              <ul>
+                <li><span class="grammar__english">I will work</span> - я буду работать</li>
+                <li><span class="grammar__english">She will study</span> - она будет учиться</li>
+                <li><span class="grammar__english">They will play</span> - они будут играть</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Сокращенная форма</h3>
+            <div class="grammar__rule">
+              <p><strong>В разговорной речи:</strong></p>
+              <ul>
+                <li><span class="grammar__english">I'll work</span> - я буду работать</li>
+                <li><span class="grammar__english">She'll study</span> - она будет учиться</li>
+                <li><span class="grammar__english">They'll play</span> - они будут играть</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Вопросы и отрицания</h3>
+            <div class="grammar__rule">
+              <p><strong>Вопросы:</strong> Will + подлежащее + глагол в инфинитиве</p>
+              <ul>
+                <li><span class="grammar__english">Will you help me?</span> - Ты поможешь мне?</li>
+                <li><span class="grammar__english">Will she come tomorrow?</span> - Она придет завтра?</li>
+                <li><span class="grammar__english">Will they like the movie?</span> - Им понравится фильм?</li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Отрицания:</strong> Подлежащее + will not (won't) + глагол в инфинитиве</p>
+              <ul>
+                <li><span class="grammar__english">I will not work</span> / <span class="grammar__english">I won't work</span> - я не буду работать</li>
+                <li><span class="grammar__english">She will not study</span> / <span class="grammar__english">She won't study</span> - она не будет учиться</li>
+                <li><span class="grammar__english">They will not play</span> / <span class="grammar__english">They won't play</span> - они не будут играть</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Сигнальные слова</h3>
+            <div class="grammar__examples">
+              <p><strong>Используется со словами:</strong></p>
+              <ul>
+                <li><span class="grammar__english">tomorrow, next week/month/year</span></li>
+                <li><span class="grammar__english">in the future, soon</span></li>
+                <li><span class="grammar__english">in 2030, next Monday</span></li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Be going to</h3>
+            <div class="grammar__rule">
+              <p><strong>Альтернативная форма:</strong> am/is/are + going to + глагол</p>
+              <ul>
+                <li><span class="grammar__english">I am going to work</span> - я собираюсь работать</li>
+                <li><span class="grammar__english">She is going to study</span> - она собирается учиться</li>
+                <li><span class="grammar__english">They are going to play</span> - они собираются играть</li>
+              </ul>
+            </div>
+
+            <div class="grammar__note">
+              <p><strong>💡 Разница:</strong> Will - спонтанные решения, Be going to - запланированные действия.</p>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 10: Образуйте Future Simple</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. I (work) tomorrow → I <input type="text" class="grammar__input" data-answer="will work" placeholder="will work"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. She (study) next week → She <input type="text" class="grammar__input" data-answer="will study" placeholder="will study"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. They (play) football → They <input type="text" class="grammar__input" data-answer="will play" placeholder="will play"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>4. We (visit) London → We <input type="text" class="grammar__input" data-answer="will visit" placeholder="will visit"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>5. He (call) you → He <input type="text" class="grammar__input" data-answer="will call" placeholder="will call"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>6. You (like) the movie → You <input type="text" class="grammar__input" data-answer="will like" placeholder="will like"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="10">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="10">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="word-order" class="grammar__section">
+          <h2 class="grammar__section-title">11. Порядок слов (Word Order)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Базовый порядок: Subject + Verb + Object</h3>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__english">I eat apples</span> - Я ем яблоки</li>
+                <li><span class="grammar__english">Maria studies English</span> - Мария изучает английский</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Позиция прилагательных</h3>
+            <p class="grammar__text">Обычно прилагательные идут <strong>перед</strong> существительным:</p>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__english">a red car</span> - красная машина</li>
+                <li><span class="grammar__english">a big house</span> - большой дом</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Позиция наречий</h3>
+            <p class="grammar__text">Наречия обычно идут после глагола или в конце предложения:</p>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__english">I speak English well</span> - Я хорошо говорю по-английски</li>
+                <li><span class="grammar__english">She works hard</span> - Она много работает</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 11: Расставьте слова в правильном порядке</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. (English / speak / I) → <input type="text" class="grammar__input" data-answer="I speak English" placeholder="Введите предложение"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. (red / a / car) → <input type="text" class="grammar__input" data-answer="a red car" placeholder="Введите фразу"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. (well / cooks / Mary) → <input type="text" class="grammar__input" data-answer="Mary cooks well" placeholder="Введите предложение"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="11">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="11">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="negation" class="grammar__section">
+          <h2 class="grammar__section-title">12. Отрицание (Negation)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Отрицание с don't/doesn't/didn't</h3>
+            <p class="grammar__text">В английском языке отрицание образуется с помощью вспомогательных глаголов:</p>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__english">I don't speak Spanish</span> - Я не говорю по-испански</li>
+                <li><span class="grammar__english">She doesn't have time</span> - У нее нет времени</li>
+                <li><span class="grammar__english">We didn't go there</span> - Мы не ходили туда</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Отрицательные слова</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Слово</th>
+                  <th>Значение</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>never</strong></td>
+                  <td>никогда</td>
+                  <td><span class="grammar__english">I never eat meat</span> - Я никогда не ем мясо</td>
+                </tr>
+                <tr>
+                  <td><strong>nothing</strong></td>
+                  <td>ничего</td>
+                  <td><span class="grammar__english">I see nothing</span> - Я ничего не вижу</td>
+                </tr>
+                <tr>
+                  <td><strong>nobody</strong></td>
+                  <td>никто</td>
+                  <td><span class="grammar__english">Nobody is here</span> - Никого нет</td>
+                </tr>
+                <tr>
+                  <td><strong>no one</strong></td>
+                  <td>никто</td>
+                  <td><span class="grammar__english">No one knows</span> - Никто не знает</td>
+                </tr>
+                <tr>
+                  <td><strong>neither</strong></td>
+                  <td>ни один</td>
+                  <td><span class="grammar__english">Neither answer is correct</span> - Ни один ответ не верный</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="grammar__warning">
+              <p><strong>⚠️ Двойное отрицание:</strong> В английском языке двойное отрицание не используется!</p>
+              <ul>
+                <li><span class="grammar__english">I don't see anything</span> ✓ (Я ничего не вижу)</li>
+                <li><span class="grammar__english">I don't see nothing</span> ✗ (Неправильно)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 12: Преобразуйте в отрицательные предложения</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. I speak English → <input type="text" class="grammar__input" data-answer="I don't speak English" placeholder="Введите отрицание"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>2. She has something (У нее есть что-то) → <input type="text" class="grammar__input" data-answer="She doesn't have anything" placeholder="Введите отрицание"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+              <div class="grammar__question">
+                <p>3. They always come here (Они всегда приходят сюда) → <input type="text" class="grammar__input" data-answer="They never come here" placeholder="Введите отрицание"></p>
+                <div class="grammar__feedback"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="12">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="12">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="questions" class="grammar__section">
+          <h2 class="grammar__section-title">13. Вопросительные предложения (Questions)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Вопросительные слова</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Слово</th>
+                  <th>Значение</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>What?</strong></td>
+                  <td>Что?</td>
+                  <td><span class="grammar__english">What are you doing?</span> - Что ты делаешь?</td>
+                </tr>
+                <tr>
+                  <td><strong>Who?</strong></td>
+                  <td>Кто?</td>
+                  <td><span class="grammar__english">Who is that?</span> - Кто это?</td>
+                </tr>
+                <tr>
+                  <td><strong>Where?</strong></td>
+                  <td>Где?</td>
+                  <td><span class="grammar__english">Where do you live?</span> - Где ты живёшь?</td>
+                </tr>
+                <tr>
+                  <td><strong>When?</strong></td>
+                  <td>Когда?</td>
+                  <td><span class="grammar__english">When do you arrive?</span> - Когда ты приезжаешь?</td>
+                </tr>
+                <tr>
+                  <td><strong>How?</strong></td>
+                  <td>Как?</td>
+                  <td><span class="grammar__english">How are you?</span> - Как дела?</td>
+                </tr>
+                <tr>
+                  <td><strong>Why?</strong></td>
+                  <td>Почему?</td>
+                  <td><span class="grammar__english">Why do you study English?</span> - Почему ты учишь английский?</td>
+                </tr>
+                <tr>
+                  <td><strong>How much/many?</strong></td>
+                  <td>Сколько?</td>
+                  <td><span class="grammar__english">How much does it cost?</span> - Сколько стоит?</td>
+                </tr>
+                <tr>
+                  <td><strong>Which?</strong></td>
+                  <td>Какой? Который?</td>
+                  <td><span class="grammar__english">Which do you prefer?</span> - Какой ты предпочитаешь?</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">Общие вопросы (Yes/No questions)</h3>
+            <p class="grammar__text">Для вопросов да/нет используем вспомогательные глаголы:</p>
+            <div class="grammar__examples">
+              <ul>
+                <li><span class="grammar__english">Do you speak English?</span> - Ты говоришь по-английски?</li>
+                <li><span class="grammar__english">Are you busy?</span> - Ты занят?</li>
+                <li><span class="grammar__english">Can you help me?</span> - Ты можешь помочь?</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">Порядок слов в вопросах</h3>
+            <div class="grammar__rule">
+              <p><strong>Общие вопросы:</strong> Вспомогательный глагол + подлежащее + основной глагол</p>
+              <ul>
+                <li><span class="grammar__english">Do you like coffee?</span></li>
+                <li><span class="grammar__english">Is she working?</span></li>
+                <li><span class="grammar__english">Will they come?</span></li>
+              </ul>
+            </div>
+
+            <div class="grammar__rule">
+              <p><strong>Специальные вопросы:</strong> Вопросительное слово + вспомогательный глагол + подлежащее + основной глагол</p>
+              <ul>
+                <li><span class="grammar__english">What do you like?</span></li>
+                <li><span class="grammar__english">Where is she working?</span></li>
+                <li><span class="grammar__english">When will they come?</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 13: Выберите правильное вопросительное слово</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. ___ is your name? (Как тебя зовут?)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q21" value="What"> What</label>
+                  <label><input type="radio" name="q21" value="How"> How</label>
+                  <label><input type="radio" name="q21" value="Where"> Where</label>
+                </div>
+                <div class="grammar__feedback" data-answer="What"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. ___ do you live? (Где ты живешь?)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q22" value="When"> When</label>
+                  <label><input type="radio" name="q22" value="Where"> Where</label>
+                  <label><input type="radio" name="q22" value="Why"> Why</label>
+                </div>
+                <div class="grammar__feedback" data-answer="Where"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. ___ do you study English? (Почему ты учишь английский?)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q23" value="Why"> Why</label>
+                  <label><input type="radio" name="q23" value="What"> What</label>
+                  <label><input type="radio" name="q23" value="How"> How</label>
+                </div>
+                <div class="grammar__feedback" data-answer="Why"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. ___ are you? (Как дела?)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q24" value="Who"> Who</label>
+                  <label><input type="radio" name="q24" value="How"> How</label>
+                  <label><input type="radio" name="q24" value="What"> What</label>
+                </div>
+                <div class="grammar__feedback" data-answer="How"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. ___ is that? (Кто это?)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q25" value="Who"> Who</label>
+                  <label><input type="radio" name="q25" value="What"> What</label>
+                  <label><input type="radio" name="q25" value="Where"> Where</label>
+                </div>
+                <div class="grammar__feedback" data-answer="Who"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="13">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="13">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="prepositions" class="grammar__section">
+          <h2 class="grammar__section-title">14. Предлоги (Prepositions)</h2>
+          
+          <div class="grammar__theory">
+            <h3 class="grammar__subtitle">Основные предлоги</h3>
+            <table class="grammar__table">
+              <thead>
+                <tr>
+                  <th>Предлог</th>
+                  <th>Значение</th>
+                  <th>Пример</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>in</strong></td>
+                  <td>внутри</td>
+                  <td><span class="grammar__english">I live in London</span> - Я живу в Лондоне</td>
+                </tr>
+                <tr>
+                  <td><strong>on</strong></td>
+                  <td>на поверхности</td>
+                  <td><span class="grammar__english">The book is on the table</span> - Книга на столе</td>
+                </tr>
+                <tr>
+                  <td><strong>at</strong></td>
+                  <td>в конкретном месте</td>
+                  <td><span class="grammar__english">I'm at the station</span> - Я на вокзале</td>
+                </tr>
+                <tr>
+                  <td><strong>under</strong></td>
+                  <td>под</td>
+                  <td><span class="grammar__english">The cat is under the bed</span> - Кошка под кроватью</td>
+                </tr>
+                <tr>
+                  <td><strong>with</strong></td>
+                  <td>с</td>
+                  <td><span class="grammar__english">I go with my friend</span> - Я иду с другом</td>
+                </tr>
+                <tr>
+                  <td><strong>without</strong></td>
+                  <td>без</td>
+                  <td><span class="grammar__english">Coffee without sugar</span> - Кофе без сахара</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 class="grammar__subtitle">Предлоги времени</h3>
+            <div class="grammar__rule">
+              <p><strong>at</strong> - время (часы): <span class="grammar__english">at 3 o'clock, at midnight</span></p>
+              <p><strong>on</strong> - дни недели, даты: <span class="grammar__english">on Monday, on May 5th</span></p>
+              <p><strong>in</strong> - месяцы, годы, сезоны: <span class="grammar__english">in July, in 2024, in summer</span></p>
+              <p><strong>for</strong> - продолжительность: <span class="grammar__english">for two hours, for a week</span></p>
+              <p><strong>since</strong> - с момента: <span class="grammar__english">since Monday, since 2020</span></p>
+            </div>
+
+            <h3 class="grammar__subtitle">Предлоги направления</h3>
+            <div class="grammar__rule">
+              <p><strong>to</strong> - к, в (направление): <span class="grammar__english">go to school</span></p>
+              <p><strong>from</strong> - от, из (источник): <span class="grammar__english">come from China</span></p>
+              <p><strong>into</strong> - внутрь (движение): <span class="grammar__english">walk into the room</span></p>
+              <p><strong>out of</strong> - из (движение наружу): <span class="grammar__english">get out of the car</span></p>
+            </div>
+          </div>
+
+          <div class="grammar__exercise">
+            <h3 class="grammar__exercise-title">Упражнение 14: Выберите правильный предлог</h3>
+            <div class="grammar__questions">
+              <div class="grammar__question">
+                <p>1. I live ___ London (Я живу в Лондоне)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q26" value="in"> in</label>
+                  <label><input type="radio" name="q26" value="on"> on</label>
+                  <label><input type="radio" name="q26" value="at"> at</label>
+                </div>
+                <div class="grammar__feedback" data-answer="in"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>2. The book is ___ the table (Книга на столе)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q27" value="in"> in</label>
+                  <label><input type="radio" name="q27" value="on"> on</label>
+                  <label><input type="radio" name="q27" value="under"> under</label>
+                </div>
+                <div class="grammar__feedback" data-answer="on"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>3. We meet ___ 5 o'clock (Мы встречаемся в 5 часов)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q28" value="at"> at</label>
+                  <label><input type="radio" name="q28" value="on"> on</label>
+                  <label><input type="radio" name="q28" value="in"> in</label>
+                </div>
+                <div class="grammar__feedback" data-answer="at"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>4. I go ___ school (Я хожу в школу)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q29" value="to"> to</label>
+                  <label><input type="radio" name="q29" value="from"> from</label>
+                  <label><input type="radio" name="q29" value="in"> in</label>
+                </div>
+                <div class="grammar__feedback" data-answer="to"></div>
+              </div>
+
+              <div class="grammar__question">
+                <p>5. The meeting is ___ Monday (Встреча в понедельник)</p>
+                <div class="grammar__options">
+                  <label><input type="radio" name="q30" value="at"> at</label>
+                  <label><input type="radio" name="q30" value="on"> on</label>
+                  <label><input type="radio" name="q30" value="in"> in</label>
+                </div>
+                <div class="grammar__feedback" data-answer="on"></div>
+              </div>
+            </div>
+            <button class="grammar__check-btn" data-exercise="14">Проверить</button>
+            <button class="grammar__reset-btn" data-exercise="14">Сбросить</button>
+          </div>
+        </section>
+
+        <section id="tips" class="grammar__section">
+          <h2 class="grammar__section-title">15. Советы и лайфхаки 🎯</h2>
+          
+          <div class="grammar__theory">
+            <p class="grammar__text">Полезные советы для изучения английской грамматики:</p>
+            
+            <h3 class="grammar__subtitle">💡 Изучайте правила через примеры</h3>
+            <div class="grammar__rule">
+              <p>Не запоминайте сухие правила - создавайте свои собственные примеры:</p>
+              <ul>
+                <li><span class="grammar__english">I work, you work, he works</span> - почувствуйте разницу</li>
+                <li><span class="grammar__english">I am working, he is working</span> - поймите логику</li>
+                <li><span class="grammar__english">I worked, he worked</span> - запомните через практику</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">🎯 Фокус на частотных глаголах</h3>
+            <div class="grammar__rule">
+              <p>Сначала выучите самые важные неправильные глаголы:</p>
+              <ul>
+                <li><strong>be-was/were-been</strong> - быть</li>
+                <li><strong>have-had-had</strong> - иметь</li>
+                <li><strong>do-did-done</strong> - делать</li>
+                <li><strong>go-went-gone</strong> - идти</li>
+                <li><strong>say-said-said</strong> - говорить</li>
+                <li><strong>get-got-got/gotten</strong> - получать</li>
+                <li><strong>make-made-made</strong> - делать, создавать</li>
+                <li><strong>know-knew-known</strong> - знать</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">📚 Практикуйте каждый день</h3>
+            <div class="grammar__rule">
+              <p>15 минут в день лучше 2 часов раз в неделю:</p>
+              <ul>
+                <li>Утром: 5 минут на повторение правил</li>
+                <li>Днем: 5 минут на упражнения</li>
+                <li>Вечером: 5 минут на создание своих примеров</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">🔊 Используйте аудирование</h3>
+            <div class="grammar__rule">
+              <p>Слушайте, как носители используют грамматику:</p>
+              <ul>
+                <li>Подкасты для начинающих</li>
+                <li>Сериалы с субтитрами</li>
+                <li>Аудиокниги вашего уровня</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">✍️ Пишите регулярно</h3>
+            <div class="grammar__rule">
+              <p>Письмо помогает закрепить грамматику:</p>
+              <ul>
+                <li>Ведите дневник на английском</li>
+                <li>Комментируйте посты в соцсетях</li>
+                <li>Пишите короткие истории</li>
+              </ul>
+            </div>
+
+            <h3 class="grammar__subtitle">🎮 Играйте с языком</h3>
+            <div class="grammar__rule">
+              <p>Превратите изучение в игру:</p>
+              <ul>
+                <li>Найдите глаголы в песнях</li>
+                <li>Опишите комнату, используя все времена</li>
+                <li>Составьте историю из 10 предложений</li>
+              </ul>
+            </div>
+
+            <div class="grammar__note">
+              <p><strong>🌟 Главное правило:</strong> Не бойтесь делать ошибки! Каждая ошибка - это шаг к успеху. Грамматика приходит с практикой.</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="learn-en-grammar.js"></script>
+</body>
+</html>

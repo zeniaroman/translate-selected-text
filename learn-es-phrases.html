@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Изучение испанских фраз</title>
+  <link rel="stylesheet" href="styles/history.css">
+  <link rel="stylesheet" href="styles/history-buttons.css">
+  <link rel="stylesheet" href="styles/learn-es.css">
+  <link rel="stylesheet" href="styles/translate-float.css">
+</head>
+<body>
+  <div class="history">
+    <div class="history__header">
+      <h1 class="history__title">Испанские фразы</h1>
+      <p class="learn-es__subtitle">402 самых употребляемых фраз на испанском языке</p>
+      <div class="learn-es__controls">
+        <button class="learn-es__back-btn" id="backToWordsBtn">
+          ← Назад к словам
+        </button>
+      </div>
+    </div>
+
+    <div class="learn-es__search-section">
+      <div class="learn-es__search-header">
+        <input 
+          type="text" 
+          id="learnSearchInput" 
+          class="learn-es__search-input" 
+          placeholder="Поиск слова или фразы..."
+        />
+        <button id="learnSearchBtn" class="learn-es__search-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div id="learnSearchResults" class="learn-es__search-results" style="display: none;">
+        <!-- Results will be displayed here -->
+      </div>
+    </div>
+
+    <div class="learn-es__filters">
+      <div class="learn-es__filter-group">
+        <label class="learn-es__filter-label">Категория</label>
+        <select id="categoryFilter" class="learn-es__filter-select">
+          <option value="all">Все категории</option>
+        </select>
+      </div>
+
+      <div class="learn-es__filter-group">
+        <label class="learn-es__filter-label">Сортировка</label>
+        <select id="sortSelect" class="learn-es__filter-select">
+          <option value="id">По порядку</option>
+          <option value="alphabetical">По алфавиту</option>
+          <option value="category">По категории</option>
+        </select>
+      </div>
+
+      <div class="learn-es__filter-group">
+        <label class="learn-es__filter-label">Статус</label>
+        <select id="statusFilter" class="learn-es__filter-select">
+          <option value="">Все</option>
+          <option value="not-learned">Не изучено</option>
+          <option value="learned">Изучено</option>
+        </select>
+      </div>
+
+      <div class="learn-es__filter-group">
+        <label class="learn-es__filter-label">Поиск</label>
+        <input type="text" id="searchInput" class="learn-es__search-input" placeholder="Поиск фразы...">
+      </div>
+    </div>
+
+    <div class="learn-es__stats">
+      <span id="phrasesCount" class="learn-es__stat">Всего фраз: 0</span>
+    </div>
+
+    <div id="phrasesList" class="learn-es__list"></div>
+  </div>
+
+  <!-- Фиксированная кнопка перевода -->
+  <button id="translateFloatBtn" class="translate-float-btn" title="Открыть форму перевода">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M5 8h14M5 8a2 2 0 1 1 0-4h14a2 2 0 1 1 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"></path>
+    </svg>
+  </button>
+
+  <!-- Форма перевода -->
+  <div id="translateFloatForm" class="translate-float-form" style="display: none;">
+    <div class="translate-float-form__header">
+      <div class="translate-float-form__header-left">
+        <button id="langSwitchBtn" class="translate-float-form__lang-btn">
+          <span id="currentLangLabel">ES → RU</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="17 1 21 5 17 9"></polyline>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <polyline points="7 23 3 19 7 15"></polyline>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+        </button>
+        <button id="playInputBtn" class="translate-float-form__play-btn translate-float-form__play-btn--header" title="Воспроизвести введённый текст">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+      </div>
+      <button id="closeTranslateForm" class="translate-float-form__close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="translate-float-form__content">
+      <div class="translate-float-form__input-group">
+        <textarea id="translateInput" class="translate-float-form__textarea" placeholder="Введите текст для перевода..." rows="3"></textarea>
+      </div>
+
+      <div class="translate-float-form__result" id="translateResult" style="display: none;">
+        <div class="translate-float-form__result-header">
+          <span class="translate-float-form__result-label">Перевод:</span>
+          <div class="translate-float-form__result-actions">
+            <button id="playTranslationBtn" class="translate-float-form__play-btn" title="Воспроизвести перевод">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+            <button id="addToHistoryBtn" class="translate-float-form__add-btn" title="Добавить в историю">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="translationText" class="translate-float-form__translation"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="learn-es-phrases-data.js"></script>
+  <script src="learn-es-phrases.js"></script>
+  <script src="translate-float.js"></script>
+  <script src="learn-search.js"></script>
+</body>
+</html>

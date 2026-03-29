@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.learn {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.learn__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.learn__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.learn__subtitle {
+  font-size: 18px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.learn__description {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.learn__description p {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #4b5563;
+}
+
+.learn__description p:last-child {
+  margin-bottom: 0;
+}
+
+.learn__description strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.learn__languages {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.learn__language-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.learn__language-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.learn__language-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.learn__language-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.learn__language-flag {
+  font-size: 32px;
+}
+
+.learn__language-description {
+  color: #6b7280;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.learn__language-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.learn__language-btn:hover {
+  background: #2563eb;
+}
+
+.learn__language-btn:active {
+  transform: scale(0.98);
+}

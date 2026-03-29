@@ -1,0 +1,128 @@
+/* Action Buttons */
+.history__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.history__btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  color: #ffffff;
+}
+
+.history__btn--primary {
+  background: #3b82f6;
+}
+
+.history__btn--primary:hover {
+  background: #2563eb;
+}
+
+.history__btn--trash {
+  background: #6b7280;
+}
+
+.history__btn--trash:hover {
+  background: #4b5563;
+}
+
+.history__btn--secondary {
+  background: #6b7280;
+}
+
+.history__btn--secondary:hover {
+  background: #4b5563;
+}
+
+.history__btn--danger {
+  background: #ef4444;
+}
+
+.history__btn--danger:hover {
+  background: #dc2626;
+}
+
+.history__btn--active {
+  background: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.history__btn--active:hover {
+  background: #2563eb;
+}
+
+.history__btn svg {
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.history__card-restore,
+.history__card-delete-permanent {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.history__card-restore:hover {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+}
+
+.history__card-delete-permanent:hover {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+/* Tab Delete Button */
+.history__tab-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  color: #6b7280;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+  margin: 0 4px;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.history__tab-delete:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.history__tab-delete:active {
+  transform: scale(0.9);
+}
+
+.history__tab--active .history__tab-delete {
+  color: #ffffff;
+}
+
+.history__tab--active .history__tab-delete:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}

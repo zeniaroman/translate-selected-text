@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Translate Settings</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="popup">
+    <div class="popup__header">
+      <h1 class="popup__title">Translate Selected Text</h1>
+      <p class="popup__subtitle">Press ⌘ Command+Z to translate</p>
+    </div>
+
+    <div class="popup__section">
+      <div class="popup__form">
+        <div class="popup__field">
+          <label for="sourceLang" class="popup__label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 8h14M5 8a2 2 0 1 1 0-4h14a2 2 0 1 1 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"></path>
+            </svg>
+            From:
+          </label>
+          <select id="sourceLang" class="popup__select">
+            <option value="auto">Определить язык</option>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="zh-CN">中文</option>
+          </select>
+        </div>
+
+        <div class="popup__swap">
+          <button id="swapBtn" class="popup__swap-btn" title="Swap languages">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="17 1 21 5 17 9"></polyline>
+              <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+              <polyline points="7 23 3 19 7 15"></polyline>
+              <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="popup__field">
+          <label for="targetLang" class="popup__label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 8h14M5 8a2 2 0 1 1 0-4h14a2 2 0 1 1 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"></path>
+            </svg>
+            To:
+          </label>
+          <select id="targetLang" class="popup__select">
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="zh-CN">中文</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup__section popup__translate-section">
+      <div class="popup__translate-header">
+        <button id="popupLangSwitchBtn" class="popup__lang-switch-btn">
+          <span id="popupCurrentLangLabel">EN → RU</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="17 1 21 5 17 9"></polyline>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <polyline points="7 23 3 19 7 15"></polyline>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+        </button>
+        <button id="popupPlayInputBtn" class="popup__play-btn-small" title="Воспроизвести введённый текст">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="popup__translate-input-group">
+        <textarea id="popupTranslateInput" class="popup__translate-textarea" placeholder="Enter text to translate..." rows="2"></textarea>
+      </div>
+
+      <div class="popup__translate-result" id="popupTranslateResult" style="display: none;">
+        <div class="popup__translate-result-header">
+          <span class="popup__translate-result-label">Translation:</span>
+          <div class="popup__translate-actions">
+            <button id="popupPlayTranslationBtn" class="popup__play-btn-small" title="Воспроизвести перевод">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+            <button id="popupAddToHistoryBtn" class="popup__add-btn-small" title="Добавить в историю">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="popupTranslationText" class="popup__translate-text"></div>
+      </div>
+    </div>
+
+    <div class="popup__section popup__search-section">
+      <div class="popup__search-header">
+        <input 
+          type="text" 
+          id="popupSearchInput" 
+          class="popup__search-input" 
+          placeholder="Search word or phrase in all data..."
+        />
+        <button id="popupSearchBtn" class="popup__search-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div id="popupSearchResults" class="popup__search-results" style="display: none;">
+        <!-- Results will be displayed here -->
+      </div>
+    </div>
+
+    <div class="popup__section">
+      <div class="popup__section-header">
+        <div class="popup__section-title">Dictionary</div>
+        <div class="popup__header-buttons">
+          <button id="openLearnBtn" class="popup__open-learn-btn">Learn</button>
+          <button id="openHistoryBtn" class="popup__open-history-btn">Train</button>
+        </div>
+      </div>
+      
+      <div id="historyTabs" class="popup__history-tabs"></div>
+      
+      <div id="historyList" class="popup__history">
+        <div class="popup__empty">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <p>Dictionary is empty</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

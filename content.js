@@ -228,7 +228,8 @@ async function loadCategories(popup, originalText, translatedText, sourceLang, t
         translation: translatedText,
         sourceLang: sourceLang,
         targetLang: targetLang,
-        category: selectedCategory
+        category: selectedCategory,
+        source: window.location.href
       });
       
       categorySelect.style.background = '#10b981';

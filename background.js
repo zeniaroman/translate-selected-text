@@ -268,6 +268,9 @@ async function saveToHistory(original, translation, sourceLang, targetLang, cate
     }
     historyByLang[langPair].splice(existingIndex, 1);
     existingEntry.timestamp = new Date().toISOString();
+    if (category !== undefined) {
+      existingEntry.category = category;
+    }
     historyByLang[langPair].unshift(existingEntry);
   } else {
     const newEntry = {
